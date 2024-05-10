@@ -7,37 +7,42 @@ import CreateAssignments from "../../pages/assaignments/CreateAssignments/Create
 import PendingAssignments from "../../pages/assaignments/pendingAssignments/PendingAssignments";
 import Login from "../../pages/Authentication/Login";
 import Register from "../../pages/Authentication/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
-const router=createBrowserRouter([
+const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Root></Root>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
+        path: '/',
+        element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'/login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <Register></Register>
             },
             {
-                path:'/assignments',
-                element:<Assignment></Assignment>
+                path: '/assignments',
+                element: <Assignment></Assignment>
             },
             {
-                path:'/create',
-                element: <CreateAssignments></CreateAssignments>
+                path: '/create',
+                element: <PrivateRoute>
+                    <CreateAssignments></CreateAssignments>
+                </PrivateRoute>
             },
             {
-                path:'/pending',
-                element: <PendingAssignments></PendingAssignments>
+                path: '/pending',
+                element: <PrivateRoute>
+                    <PendingAssignments></PendingAssignments>
+                </PrivateRoute>
             },
         ]
     }

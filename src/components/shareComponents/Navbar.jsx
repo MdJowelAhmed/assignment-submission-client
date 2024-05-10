@@ -196,8 +196,7 @@ const Navbar = () => {
                                         </ul>
 
                                     </div> : <div>
-                                        <Link to='/login'><button className="btn">Login</button></Link>
-                                        <Link to='/register'><button className="btn ml-3">Register</button></Link>
+                                        
                                     </div>
                                 }
                             </div>

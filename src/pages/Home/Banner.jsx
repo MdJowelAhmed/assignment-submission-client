@@ -31,9 +31,9 @@ const Banner = () => {
                         <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/premium-photo/programming-html-coding-technology-icon_53876-121882.jpg?w=900" />
                     </div>
                     <div className='absolute top-0 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full  rounded-2xl'>
-                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-10 pl-12 pb-3 text-amber-200'>HTML: Building blocks for web page structure and content.</h2>
+                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-20 pl-20 pb-3 text-amber-200'>HTML: Building blocks for web page structure and content.</h2>
 
-                        <p className='text-sm font-poppins max-w-lg pl-12'>HTML, the foundation of web pages, structures content with tags, enabling creation of diverse layouts and interactivity, crucial in modern digital communication and design.</p>
+                        <p className='text-sm font-poppins max-w-lg pl-20'>HTML, the foundation of web pages, structures content with tags, enabling creation of diverse layouts and interactivity, crucial in modern digital communication and design.</p>
 
                         <div className='flex justify-center pt-10'>
                             <button className='btn text-center btn-secondary'>Explore more</button>
@@ -46,9 +46,9 @@ const Banner = () => {
                         <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/premium-photo/smiling-asian-man-working-laptop-writing_116547-19779.jpg?w=826" />
                     </div>
                     <div className='absolute top-0 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full  rounded-2xl'>
-                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-10 pl-12 pb-3 text-amber-200'>HTML: Building blocks for web page structure and content.</h2>
+                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-20 pl-20 pb-3 text-amber-200'>React: JavaScript library for building user interfaces.</h2>
 
-                        <p className='text-sm font-poppins max-w-lg pl-12'>HTML, the foundation of web pages, structures content with tags, enabling creation of diverse layouts and interactivity, crucial in modern digital communication and design.</p>
+                        <p className='text-sm font-poppins max-w-lg pl-20'>Popular JavaScript library for building dynamic user interfaces, providing a declarative and component-based approach, facilitating efficient rendering and seamless data flow, widely used in modern web development.</p>
 
                         <div className='flex justify-center pt-10'>
                             <button className='btn text-center btn-secondary'>Explore more</button>
@@ -61,9 +61,9 @@ const Banner = () => {
                         <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/free-photo/trans-person-working-office-with-colleagues_23-2149286975.jpg?t=st=1715280001~exp=1715283601~hmac=f7ae577b0506659ea4ae9070d53abba0cdca96ff33d697371772e91678bebd0b&w=826" />
                     </div>
                     <div className='absolute top-0 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full  rounded-2xl'>
-                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-10 pl-12 pb-3 text-amber-200'>HTML: Building blocks for web page structure and content.</h2>
+                        <h2 className='text-4xl font-semibold font-poppins max-w-lg pt-20 pl-20 pb-3 text-amber-200'>Node.js: JavaScript runtime environment for server-side applications.</h2>
 
-                        <p className='text-sm font-poppins max-w-lg pl-12'>HTML, the foundation of web pages, structures content with tags, enabling creation of diverse layouts and interactivity, crucial in modern digital communication and design.</p>
+                        <p className='text-sm font-poppins max-w-lg pl-20'>Open-source JavaScript runtime environment allowing server-side execution of JavaScript code, facilitating scalable and efficient network applications, ideal for building web servers, APIs, and real-time applications.</p>
 
                         <div className='flex justify-center pt-10'>
                             <button className='btn text-center btn-secondary'>Explore more</button>
@@ -76,9 +76,9 @@ const Banner = () => {
                         <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/premium-photo/student-studying-hd-8k-wallpaper-stock-photographic-image_1066384-1382.jpg?w=996" />
                     </div>
                     <div className='absolute top-0 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full  rounded-2xl'>
-                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-10 pl-20 pb-3 text-amber-200'>HTML: Building blocks for web page structure and content.</h2>
+                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-20 pl-20 pb-3 text-amber-200'>JavaScript: Web's dynamic language for interactive user experiences.</h2>
 
-                        <p className='text-sm font-poppins max-w-lg pl-20'>HTML, the foundation of web pages, structures content with tags, enabling creation of diverse layouts and interactivity, crucial in modern digital communication and design.</p>
+                        <p className='text-sm font-poppins max-w-lg pl-20'>Widely used client-side scripting language for web development, enabling interactive and dynamic content creation, from simple animations to complex web applications and interactive user interfaces.</p>
 
                         <div className='flex justify-center pt-10'>
                             <button className='btn text-center btn-secondary'>Explore more</button>

@@ -13,7 +13,7 @@ import {
 import app from '../firebase/Firebase.config'
 
 
-export const AuthContext = createContext(null)
+export const AuthContext = createContext()
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 

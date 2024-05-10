@@ -5,7 +5,7 @@ import Footer from "../../components/shareComponents/Footer";
 
 const Root = () => {
     return (
-        <div className="mx-16">
+        <div className="mx-4 md:mx-16">
             <div className="my-10">
                 <Navbar></Navbar>
             </div>

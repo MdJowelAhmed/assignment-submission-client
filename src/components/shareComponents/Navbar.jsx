@@ -6,7 +6,7 @@
 // import Aos from 'aos'
 // import 'aos/dist/aos.css'
 
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Navbar = () => {
     // const { user, logOut } = useContext(AuthContext)
@@ -58,16 +58,16 @@ const Navbar = () => {
                         </NavLink>
 
                         <NavLink to='/assignments' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-sm md:text-xl" : "btn btn-secondary mx-3"}>
-                            <button >Create Assignments</button>
+                            <button > Assignments</button>
                         </NavLink>
                         <NavLink to='/create' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-sm md:text-xl" : "btn btn-secondary mx-3"}>
-                            <button > Assignments</button>
+                            <button >Create Assignments</button>
                         </NavLink>
                         <NavLink to='/pending' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-sm md:text-xl" : "btn btn-secondary mx-3"}>
                             <button >Pending Assignments</button>
                         </NavLink>
                     </ul>
-
+                    <Link to='/login'>Login</Link>
                     <div className='dropdown dropdown-end z-50'>
                         <div
                             tabIndex={0}

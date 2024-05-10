@@ -73,21 +73,24 @@ const Banner = () => {
                 {/* 4 */}
                 <SwiperSlide>
                     <div className='relative'>
+                        {/* <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/premium-photo/coding-programming-site-application-laptop_272306-139.jpg?w=996" /> */}
                         <img className='h-[500px] w-full  rounded-2xl' src="https://img.freepik.com/premium-photo/student-studying-hd-8k-wallpaper-stock-photographic-image_1066384-1382.jpg?w=996" />
                     </div>
                     <div className='absolute top-0 text-white bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full  rounded-2xl'>
-                        <h2 className='text-4xl font-semibold font-poppins max-w-md pt-20 pl-20 pb-3 text-amber-200'>JavaScript: Web's dynamic language for interactive user experiences.</h2>
+                        <div >
+                            <h2 className='text-4xl font-semibold font-poppins max-w-md pt-20 pl-20 pb-3 text-amber-200 '>JavaScript: Web's dynamic language for interactive user experiences.</h2>
 
-                        <p className='text-sm font-poppins max-w-lg pl-20'>Widely used client-side scripting language for web development, enabling interactive and dynamic content creation, from simple animations to complex web applications and interactive user interfaces.</p>
+                            <p className='text-sm font-poppins max-w-lg pl-20'>Widely used client-side scripting language for web development, enabling interactive and dynamic content creation, from simple animations to complex web applications and interactive user interfaces.</p>
+                        </div>
 
                         <div className='flex justify-center pt-10'>
                             <button className='btn text-center btn-secondary'>Explore more</button>
                         </div>
                     </div>
                 </SwiperSlide>
-                
-               
-              
+
+
+
             </Swiper>
         </div>
     );

@@ -7,7 +7,7 @@ const Assignment = () => {
     console.log(loadedAssignment)
     return (
         <div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
             {
                 loadedAssignment.map(assignment=> <AllAss assignment={assignment} key={assignment._id}></AllAss>)
             }

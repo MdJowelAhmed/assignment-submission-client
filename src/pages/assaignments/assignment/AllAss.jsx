@@ -6,7 +6,7 @@ import { FcViewDetails } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const AllAss = ({ assignment }) => {
-	const {_id, thumbnail, title, marks, level } = assignment;
+	const { _id, thumbnail, title, marks, level } = assignment;
 	return (
 		<div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
 			{/* <div className="flex space-x-4">
@@ -17,19 +17,23 @@ const AllAss = ({ assignment }) => {
 		</div>
 	</div> */}
 			<div>
-				<img src={thumbnail} alt="" className=" w-full mb-4 rounded-t-3xl h-72  dark:bg-gray-500" />
+				<img src={thumbnail} alt="" className=" w-full mb-4 rounded-t-full h-60  dark:bg-gray-500" />
 				<div className='flex justify-between pr-5'>
-					<h2 className="mb-1 text-xl font-semibold font-poppins">{title} </h2>
-					<TiEdit className='text-5xl text-amber-300' />
+					<h2 className="mb-1  font-medium font-poppins">{title} </h2>
+
 
 				</div>
 				<div className='flex justify-between pr-5'>
-					<p><span className='text-xl font-poppins text-blue-500 font-medium'>Marks :</span> <span className='text-xl font-poppins text-blue-500 font-medium'>{marks}</span> </p>
-					<MdDelete className='text-4xl text-amber-300' />
+					<p><span className='font-poppins text-blue-500 font-medium'>Marks :</span> <span className=' font-poppins text-blue-500 font-medium'>{marks}</span> </p>
+
+					<p><span className=' font-poppins text-blue-500 font-medium'>Level :</span> <span className='text-xl font-poppins text-blue-500 font-medium'>{level}</span> </p>
+
+
 				</div>
-				<div className='flex justify-between pr-5'>
-				<p><span className='text-xl font-poppins text-blue-500 font-medium'>Level :</span> <span className='text-2xl font-poppins text-blue-500 font-bold'>{level}</span> </p>
-				<Link to={`/details/${_id}`}><FcViewDetails className='text-4xl text-amber-300' title='View Details' /></Link>
+				<div className='flex justify-between pr-5 mt-3'>
+					<TiEdit className='text-4xl text-amber-300' />
+					<MdDelete className='text-4xl text-amber-300' />
+					<Link to={`/details/${_id}`}><FcViewDetails className='text-4xl text-amber-300' title='View Details' /></Link>
 				</div>
 			</div>
 			<div className="flex flex-wrap justify-between">

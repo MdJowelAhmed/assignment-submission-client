@@ -96,9 +96,9 @@ const CreateAssignments = () => {
                                 <span className="label-text"> assignment difficulty level</span>
                             </label>
                             <select className=" p-3 border border-blue-200 rounded-md" name="level" id="">
-                                <option value="easy">easy</option>
-                                <option value="medium">medium</option>
-                                <option value="hard">hard</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
                             </select>
                             {/* <input type="text" name="marks" placeholder="Marks" className="input input-bordered" required /> */}
                         </div>

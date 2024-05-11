@@ -8,6 +8,8 @@ import PendingAssignments from "../../pages/assaignments/pendingAssignments/Pend
 import Login from "../../pages/Authentication/Login";
 import Register from "../../pages/Authentication/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyAttempt from "../../pages/MyAttempt/MyAttempt";
+import DetailsAss from "../../pages/assaignments/assignment/DetailsAss";
 
 
 const router = createBrowserRouter([
@@ -27,6 +29,15 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/attempt',
+                element: <MyAttempt></MyAttempt>
+            },
+            {
+                path: '/details/:id',
+                element: <DetailsAss></DetailsAss>,
+                loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
             },
             {
                 path: '/assignments',

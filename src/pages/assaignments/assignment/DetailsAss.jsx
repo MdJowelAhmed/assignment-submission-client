@@ -6,12 +6,12 @@ const DetailsAss = () => {
     const loadedDetails = useLoaderData()
     const { id } = useParams()
     const details = loadedDetails.find(item => item._id == id)
-    const { title, description, marks, thumbnail, level, date, create } = details
+    const { _id,title, description, marks, thumbnail, level, date, create } = details
     return (
         <div className=" p-10" style={{ backgroundImage: 'url(https://img.freepik.com/premium-vector/wave-3d-abstract-wave-dots-dark-background-big-data-technology-vector-background_691453-200.jpg)' }}>
             <div className="max-w-2xl overflow-hidden m-5 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
 
-                <img className="object-cover w-full" src={thumbnail} alt="" />
+                <img className="object-cover h-72 w-full" src={thumbnail} alt="" />
                 <div className="p-6">
                     <div>
 
@@ -36,7 +36,7 @@ const DetailsAss = () => {
                                 <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabindex="0" role="link">{create.name} </a>
                             </div>
                             <div>
-                                <Link to='/submit'> <button className="btn btn-success">Take
+                                <Link to={`/submit/${_id}`}> <button className="btn btn-success">Take
                                     Assignment</button></Link>
                             </div>
                         </div>

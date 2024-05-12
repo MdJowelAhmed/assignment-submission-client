@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../../components/hooks/useAuth";
 // import axios from 'axios'
@@ -54,7 +53,7 @@ const CreateAssignments = () => {
       
     }
     return (
-        <div className="h-[600px] rounded-3xl" style={{backgroundImage: 'url(https://img.freepik.com/premium-vector/abstract-blue-wave-background-transparent-wavy-lines-wave-blue-smoke-liquid_206325-2621.jpg?w=1380)'}}>
+        <div className="h-[550px] rounded-3xl" style={{backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)'}}>
             {/*  */}
             <h2 className="text-center text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
             <div className="flex flex-col md:flex-row gap-5 md:gap-10 p-12">

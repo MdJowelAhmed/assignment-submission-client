@@ -4,9 +4,26 @@ import { TiEdit } from "react-icons/ti";
 import { MdDelete } from "react-icons/md";
 import { FcViewDetails } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useEffect, useState } from 'react';
+import useAuth from '../../../components/hooks/useAuth';
 
-const AllAss = ({ assignment }) => {
-	const { _id, thumbnail, title, marks, level } = assignment;
+const AllAss = ({ assignment,handleDelete }) => {
+	const { _id, thumbnail, title, marks, level,create } = assignment;
+	
+	
+	// const{user}=useAuth()
+
+	// useEffect(() => {
+    //     fetch(`${import.meta.env.VITE_API_URL}/assignment`)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             // console.log(data)
+    //             setItem(data)
+    //         });
+    // }, [item]);
+
+	
 	return (
 		<div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
 			{/* <div className="flex space-x-4">
@@ -31,9 +48,11 @@ const AllAss = ({ assignment }) => {
 
 				</div>
 				<div className='flex justify-between pr-5 mt-3'>
-					<TiEdit className='text-4xl text-amber-300' />
-					<MdDelete className='text-4xl text-amber-300' />
-					<Link to={`/details/${_id}`}><FcViewDetails className='text-4xl text-amber-300' title='View Details' /></Link>
+					<Link to={`/update/${_id}`}><button className='btn'><TiEdit className='text-4xl text-amber-300' /></button></Link>
+
+					<button onClick={()=>handleDelete(_id)} className='btn'><MdDelete className='text-4xl text-amber-300' /></button>
+
+					<Link to={`/details/${_id}`}><button className='btn'><FcViewDetails className='text-4xl text-amber-300' title='View Details' /></button></Link>
 				</div>
 			</div>
 			<div className="flex flex-wrap justify-between">
@@ -70,6 +89,9 @@ const AllAss = ({ assignment }) => {
 	)
 }
 
-AllAss.propTypes = {}
+AllAss.propTypes = {
+	assignment:PropTypes.object.isRequired,
+	handleDelete:PropTypes.func
+}
 
 export default AllAss

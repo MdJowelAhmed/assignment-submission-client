@@ -10,6 +10,8 @@ import Register from "../../pages/Authentication/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyAttempt from "../../pages/MyAttempt/MyAttempt";
 import DetailsAss from "../../pages/assaignments/assignment/DetailsAss";
+import UpdateAssignment from "../../pages/assaignments/assignment/UpdateAssignment";
+import Submission from "../../pages/assaignments/assignment/Submission";
 
 
 const router = createBrowserRouter([
@@ -32,13 +34,28 @@ const router = createBrowserRouter([
             },
             {
                 path: '/attempt',
-                element: <MyAttempt></MyAttempt>
+                element: <MyAttempt></MyAttempt>,
+                loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/submission`)
             },
             {
                 path: '/details/:id',
                 element: <DetailsAss></DetailsAss>,
                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
             },
+            {
+                path: '/submit/:id',
+                element: <Submission></Submission>,
+                loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
+            },
+            {
+                path: '/update/:id',
+                element: <UpdateAssignment></UpdateAssignment>,
+                loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/assignment/${params.id}`)
+
+                // loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
+            },
+                // loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/assignment/${params.id}`)
+            
             {
                 path: '/assignments',
                 element: <Assignment></Assignment>,

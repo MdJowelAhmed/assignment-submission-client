@@ -18,7 +18,7 @@ const Submission = () => {
         const status = 'pending';
 
         const submited = {
-            file, note, status, title, marks, submit: {
+            file, note, status, title, marks, _id, submit: {
                 submitEmail: user?.email,
                 name: user?.displayName,
                 photoURL: user?.photoURL

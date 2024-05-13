@@ -12,6 +12,7 @@ import MyAttempt from "../../pages/MyAttempt/MyAttempt";
 import DetailsAss from "../../pages/assaignments/assignment/DetailsAss";
 import UpdateAssignment from "../../pages/assaignments/assignment/UpdateAssignment";
 import Submission from "../../pages/assaignments/assignment/Submission";
+import GiveMarks from "../../pages/assaignments/pendingAssignments/GiveMarks";
 
 
 const router = createBrowserRouter([
@@ -71,7 +72,16 @@ const router = createBrowserRouter([
                 path: '/pending',
                 element: <PrivateRoute>
                     <PendingAssignments></PendingAssignments>
-                </PrivateRoute>
+                </PrivateRoute>,
+                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/submission`)
+            },
+            {
+                path: '/giveMarks/:id',
+                element: <PrivateRoute>
+                    <GiveMarks></GiveMarks>
+                </PrivateRoute>,
+                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/submitted`)
+                // loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/submission/${params.id}`)
             },
         ]
     }

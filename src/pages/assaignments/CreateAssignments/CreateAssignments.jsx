@@ -8,52 +8,72 @@ import Swal from "sweetalert2";
 
 const CreateAssignments = () => {
     const [startDate, setStartDate] = useState(new Date());
-    const {user}=useAuth()
-    
-    const handleAddAssignments=async e=>{
+    const { user } = useAuth()
+    const [marks, setMarks] = useState('');
+    const [validationMessage, setValidationMessage] = useState('');
+
+
+    const handleMarksChange = (event) => {
+        const newMarks = event.target.value;
+        setValidationMessage('')
+        if( newMarks < 30){
+            setValidationMessage('Marks should not exceed 30 Under.');
+            setMarks(30);
+        }
+        if (newMarks > 60) {
+            setValidationMessage('Marks should not exceed 60 up.');
+            setMarks(60);
+           
+        } else {
+            setValidationMessage('');
+            setMarks(newMarks);
+        }
+    };
+
+    const handleAddAssignments = async e => {
         e.preventDefault()
-        const form=e.target;
-        const title=form.title.value;
-        const description=form.description.value;
-        const marks=form.marks.value;
-        const thumbnail=form.thumbnail.value;
-        const level=form.level.value;
-        const creatorEmail=form.creatorEmail.value;
-        
-        const addAssignments={
-            title,description,marks:parseInt(marks),thumbnail,level, date:startDate,create:{
+        const form = e.target;
+        const title = form.title.value;
+        const description = form.description.value;
+        const marks = form.marks.value;
+        const thumbnail = form.thumbnail.value;
+        const level = form.level.value;
+        const creatorEmail = form.creatorEmail.value;
+
+        const addAssignments = {
+            title, description, marks: parseInt(marks), thumbnail, level, date: startDate, create: {
                 creatorEmail,
-                photoURL:user?.photoURL,
-                name:user?.displayName,
+                photoURL: user?.photoURL,
+                name: user?.displayName,
             }
         }
         console.log(addAssignments)
 
         // send server 
-        
-        fetch(`${import.meta.env.VITE_API_URL}/assignment`,{
+
+        fetch(`${import.meta.env.VITE_API_URL}/assignment`, {
             method: "POST",
-            headers:{
-                "content-type":"application/json",
+            headers: {
+                "content-type": "application/json",
             },
-            body:JSON.stringify(addAssignments)
+            body: JSON.stringify(addAssignments)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data. insertedId){
-                Swal.fire({
-                    title: "Assignments create success!",
-                    text: "You clicked the button!",
-                    icon: "success"
-                  });
-                  form.reset()
-            }
-        })
-      
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Assignments create success!",
+                        text: "You clicked the button!",
+                        icon: "success"
+                    });
+                    form.reset()
+                }
+            })
+
     }
     return (
-        <div className="h-[550px] rounded-3xl" style={{backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)'}}>
+        <div className="h-[550px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
             {/*  */}
             <h2 className="text-center text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
             <div className="flex flex-col md:flex-row gap-5 md:gap-10 p-12">
@@ -79,7 +99,13 @@ const CreateAssignments = () => {
                             <label className="label">
                                 <span className="label-text">Marks</span>
                             </label>
-                            <input type="text" name="marks" placeholder="Marks" className="input input-bordered" required />
+                            <input type="number"
+                                id="marks"
+                                min="30"
+                                max="60"
+                                value={marks}
+                                onChange={handleMarksChange} name="marks" placeholder="Marks" className="input input-bordered" required />
+                                <span className="text-red-600">{validationMessage}</span>
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -108,13 +134,13 @@ const CreateAssignments = () => {
                             <DatePicker className=" p-3 border border-blue-200 rounded-md w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div>
                     </div>
-                     {/* marks and thumbnail */}
-                     <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    {/* marks and thumbnail */}
+                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">Creator_Email</span>
                             </label>
-                            <input type="email"defaultValue={user?.email} name="creatorEmail" placeholder="Creator_Email" className="input input-bordered" required disabled />
+                            <input type="email" defaultValue={user?.email} name="creatorEmail" placeholder="Creator_Email" className="input input-bordered" required disabled />
                         </div>
                         {/* <div className="form-control flex-1">
                             <label className="label">

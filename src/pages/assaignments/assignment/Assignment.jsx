@@ -8,8 +8,26 @@ import useAuth from "../../../components/hooks/useAuth";
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
     console.log(loadedAssignment)
-    const [item, setItem] = useState([loadedAssignment]);
-    const { user } = useAuth()
+    const [item, setItem] = useState('Easy');
+    const [filter, setFilter] = useState("")
+   
+    // const { user } = useAuth()
+    // const [difficulty, setDifficulty] = useState('Easy');
+    const [assignments, setAssignments] = useState(loadedAssignment);
+
+   
+
+     useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_URL}/assignment?filter=${filter}}`)
+        .then(res =>res.json())
+        .then(data=>{
+            console.log(data)
+            // setFilter(data)
+        })
+    
+      }, [filter])
+      console.log(filter)
+
 
     // console.log(loadedAssignment.create.creatorEmail)
 
@@ -23,6 +41,8 @@ const Assignment = () => {
 
     //         });
     // }, [item,loadedAssignment._id]);
+
+
     const handleDelete = id => {
         console.log(id)
         // if( loadedAssignment.create?.creatorEmail !== user?.email  ){
@@ -51,13 +71,12 @@ const Assignment = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = item.filter(p =>{
+                            const remaining = item.filter(p => {
                                 console.log(p?._id)
-                                return  p?._id !== id
+                                return p?._id !== id
                             })
                             setItem(remaining)
-                            console.log(remaining)
-                            console.log('asdf')
+                            
                         }
                     })
 
@@ -67,21 +86,19 @@ const Assignment = () => {
     return (
         <div>
             <div className="text-center mb-10">
-                <details className="dropdown">
-                    <summary className="m-1 btn">open or close</summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1]  rounded-box bg-base-100 w-52">
-                        <li> <button className="btn">Easy</button></li>
-                        <li> <button className="btn">Medium</button></li>
-                        <li> <button className="btn  ">Hard</button></li>
-                        
-                    </ul>
-                </details>
+                <label >Select Difficulty Level:</label>
+                <select  onChange= {e => {
+                setFilter(e.target.value)}}  value={filter} id="filter"  >
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
             </div>
 
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
                 {
-                    loadedAssignment.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
+                    assignments.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
                 }
             </div>
         </div >

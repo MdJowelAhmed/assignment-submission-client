@@ -118,7 +118,7 @@ const Navbar = () => {
 
                                             </li>
                                             <li>
-                                                <button onClick={logOut} className="btn">LogOut</button>
+                                                <Link onClick={logOut}  to='/login' > <button className="btn">LogOut</button></Link>
                                             </li>
                                         </ul>
 

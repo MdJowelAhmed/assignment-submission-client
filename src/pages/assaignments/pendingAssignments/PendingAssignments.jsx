@@ -47,7 +47,7 @@ const PendingAssignments = () => {
                                         
                                         <td>
                                             <div className="">
-                                             <h2>{p.title} </h2>
+                                             <h2>{p.title?.substring(0,20)} </h2>
                                             </div>
                                         </td>
                                         <td>

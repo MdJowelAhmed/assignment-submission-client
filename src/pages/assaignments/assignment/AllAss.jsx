@@ -48,11 +48,11 @@ const AllAss = ({ assignment,handleDelete }) => {
 
 				</div>
 				<div className='flex justify-between pr-5 mt-3'>
-					<Link to={`/update/${_id}`}><button className='btn'><TiEdit className='text-4xl text-amber-300' /></button></Link>
+					<Link to={`/update/${_id}`}><button className='btn btn-primary '><TiEdit className='text-4xl text-amber-300 ' /></button></Link>
 
-					<button onClick={()=>handleDelete(_id)} className='btn'><MdDelete className='text-4xl text-amber-300' /></button>
+					<button onClick={()=>handleDelete(_id)} className='btn btn-success'><MdDelete className='text-4xl text-amber-300' /></button>
 
-					<Link to={`/details/${_id}`}><button className='btn'><FcViewDetails className='text-4xl text-amber-300' title='View Details' /></button></Link>
+					<Link to={`/details/${_id}`}><button className='btn btn-secondary'><FcViewDetails className='text-4xl text-amber-300 ' title='View Details' /></button></Link>
 				</div>
 			</div>
 			<div className="flex flex-wrap justify-between">

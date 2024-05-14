@@ -9,30 +9,43 @@ import axios from "axios";
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
     // console.log(loadedAssignment)
-    const [item, setItem] = useState([]);
-    const [filter, setFilter] = useState("")
-   
+    const [filter, setFilter] = useState('All'); 
+    const [items, setItems] = useState([]);
+
     // const { user } = useAuth()
     // const [difficulty, setDifficulty] = useState('Easy');
     // const [assignments, setAssignments] = useState(loadedAssignment);
 
-   
 
-     useEffect(() => {
-        // fetch(`${import.meta.env.VITE_API_URL}/assignment?filter=${filter}}`)
-        // .then(res =>res.json())
-        // .then(data=>{
-        //     console.log(data)
-        //     // setFilter(data)
-        // })
-        axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
-        .then(res=>{
-            setItem(res.data)
-        })
-    
-      }, [])
-      console.log(item)
-    //   console.log(filter)
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+              // Make a GET request to fetch items data from an API
+              const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
+              setItems(response.data); // Update items state with fetched data
+            } catch (error) {
+              console.error('Error fetching items:', error);
+            }
+          };
+      
+          fetchItems();
+
+      
+            // axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
+            // .then(response => {
+            //   setItems(response.data); // Update items state with fetched data
+            // })
+            // .catch(error => {
+            //   console.error('Error fetching items:', error);
+            // });
+    }, [])
+    // console.log(items)
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+      };
+
+      const filteredItems = filter === 'All' ? items : items.filter(assignment => assignment.level === filter);
 
 
     // console.log(loadedAssignment.create.creatorEmail)
@@ -47,6 +60,12 @@ const Assignment = () => {
 
     //         });
     // }, [item,loadedAssignment._id]);
+
+
+    // const handleDifficultyChange = (event) => {
+    //     setfilter(event.target.value);
+    // };
+    // const filteredAssignments = filter === 'all' ? assignments : assignments.filter(assignment => assignment.difficulty === filter);
 
 
     const handleDelete = id => {
@@ -70,19 +89,19 @@ const Assignment = () => {
                     .then(res => res.json())
                     .then(data => {
                         // console.log(data)
-                        setItem(data)
+                        setItems(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = item.filter(p => {
+                            const remaining = items.filter(p => {
                                 console.log(p?._id)
                                 return p?._id !== id
                             })
-                            setItem(remaining)
-                            
+                            setItems(remaining)
+
                         }
                     })
 
@@ -93,8 +112,8 @@ const Assignment = () => {
         <div>
             <div className="text-center mb-10">
                 <label >Select Difficulty Level:</label>
-                <select  onChange= {e => {
-                setFilter(e.target.value)}}  value={filter} id="filter"  >
+                <select value={filter} onChange={handleFilterChange}   >
+                    <option value="All">All</option>
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
@@ -104,7 +123,7 @@ const Assignment = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
                 {
-                    item.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
+                    filteredItems.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
                 }
             </div>
         </div >

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../components/hooks/useAuth";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
     const {signIn,signInWithGoogle}=useAuth()
@@ -15,10 +16,20 @@ const Login = () => {
     const email=form.email.value;
     const password=form.password.value;
     const user={email,password}
-    console.log(user)
+  
     setRegError('')
     signIn(email, password)
             .then(result => {
+                const loggedUser=result.user;
+                console.log(loggedUser)
+                const user={email}
+
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,user,{
+                    withCredentials:true
+                })
+                .then(res=>{
+                    console.log(res.data)
+                })
                 if(result.user){
                     Swal.fire({
                         title: "Login successFull!",
@@ -39,7 +50,15 @@ const Login = () => {
     socialProvider()
         .then(result => {
             if (result.user) {
-                
+                const loggedUser=result.user;
+                // console.log(loggedUser)
+                const userGoogle={email:result?.user?.email}
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,userGoogle,{
+                    withCredentials:true
+                })
+                .then(res=>{
+                    console.log(res.data)
+                })
                 Swal.fire({
                     title: "Login Success!",
                     text: "You clicked the button!",

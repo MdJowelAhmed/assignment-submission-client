@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../components/hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+// import { set } from "firebase/database";
 
 
 const MyAttempt = () => {
-    const mySubmit=useLoaderData()
-    console.log(mySubmit)
+    // const mySubmit=useLoaderData()
+    // console.log(mySubmit)
     const [item, setItem] = useState([]);
     // console.log(item)
     const {user}=useAuth()
@@ -13,14 +15,16 @@ const MyAttempt = () => {
 
     useEffect(() => {
         if(user?.email){
-            fetch(`${import.meta.env.VITE_API_URL}/submit/${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                setItem(data)
-
-
-            });
+            // fetch(`${import.meta.env.VITE_API_URL}/submit/${user?.email}`)
+            // .then((res) => res.json())
+            // .then((data) => {
+            //     console.log(data)
+            //     setItem(data)
+            // });
+            axios.get(`${import.meta.env.VITE_API_URL}/submit/${user?.email}`,{withCredentials:true})
+            .then(res=>{
+                setItem(res.data)
+            })
         }
     }, [user]);
     console.log(item)

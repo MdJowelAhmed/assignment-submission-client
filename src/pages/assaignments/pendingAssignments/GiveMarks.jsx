@@ -6,10 +6,15 @@ const GiveMarks = () => {
     console.log(loadedData)
     const { id } = useParams()
     console.log(id)
-    const marks = loadedData.find(data=> data._id !==id)
+    const marks = loadedData?.find(data=> {
+        console.log(data._id)
+       return data._id !==id
+    })
     return (
         <div>
             {/* <h2>{details.title} </h2> */}
+
+            give mark
         </div>
     );
 };

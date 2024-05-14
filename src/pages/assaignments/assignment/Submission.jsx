@@ -17,22 +17,22 @@ const Submission = () => {
         const note = form.note.value;
         const status = 'pending';
 
-        const submited = {
-            file, note, status, title, marks, _id, submit: {
+        const submitted = {
+            file, note, status, title, marks, submit: {
                 submitEmail: user?.email,
                 name: user?.displayName,
                 photoURL: user?.photoURL
 
             }
         }
-        console.log(submited)
+        console.log(submitted)
 
         fetch(`${import.meta.env.VITE_API_URL}/submission`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify(submited)
+            body: JSON.stringify(submitted)
         })
             .then(res => res.json())
             .then(data => {

@@ -3,30 +3,36 @@ import AllAss from "./AllAss";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../../components/hooks/useAuth";
+import axios from "axios";
 
 
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
-    console.log(loadedAssignment)
-    const [item, setItem] = useState('Easy');
+    // console.log(loadedAssignment)
+    const [item, setItem] = useState([]);
     const [filter, setFilter] = useState("")
    
     // const { user } = useAuth()
     // const [difficulty, setDifficulty] = useState('Easy');
-    const [assignments, setAssignments] = useState(loadedAssignment);
+    // const [assignments, setAssignments] = useState(loadedAssignment);
 
    
 
      useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/assignment?filter=${filter}}`)
-        .then(res =>res.json())
-        .then(data=>{
-            console.log(data)
-            // setFilter(data)
+        // fetch(`${import.meta.env.VITE_API_URL}/assignment?filter=${filter}}`)
+        // .then(res =>res.json())
+        // .then(data=>{
+        //     console.log(data)
+        //     // setFilter(data)
+        // })
+        axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
+        .then(res=>{
+            setItem(res.data)
         })
     
-      }, [filter])
-      console.log(filter)
+      }, [])
+      console.log(item)
+    //   console.log(filter)
 
 
     // console.log(loadedAssignment.create.creatorEmail)
@@ -98,7 +104,7 @@ const Assignment = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
                 {
-                    assignments.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
+                    item.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
                 }
             </div>
         </div >

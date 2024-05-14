@@ -11,23 +11,52 @@ const CreateAssignments = () => {
     const { user } = useAuth()
     const [marks, setMarks] = useState('');
     const [validationMessage, setValidationMessage] = useState('');
+    const [selectedDate, setSelectedDate] = useState('');
+    const [error, setError] = useState('');
 
 
     const handleMarksChange = (event) => {
         const newMarks = event.target.value;
         setValidationMessage('')
-        if( newMarks < 30){
+        if (newMarks < 30) {
             setValidationMessage('Marks should not exceed 30 Under.');
             setMarks(30);
         }
         if (newMarks > 60) {
-            setValidationMessage('Marks should not exceed 60 up.');
+            setValidationMessage('Marks should not allow 30 under and  60 up.');
             setMarks(60);
-           
+
         } else {
             setValidationMessage('');
             setMarks(newMarks);
         }
+    };
+
+    const handleChange = (event) => {
+        setSelectedDate(event.target.value);
+    };
+
+
+
+    const isPastOrToday = (dateString) => {
+        const selectedDate = new Date(dateString);
+        const today = new Date();
+
+        return selectedDate <= today;
+    };
+
+    const getTomorrowDate = () => {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        const year = tomorrow.getFullYear();
+        let month = tomorrow.getMonth() + 1;
+        let day = tomorrow.getDate();
+
+        month = month < 10 ? `0${month}` : month;
+        day = day < 10 ? `0${day}` : day;
+
+        return `${year}-${month}-${day}`;
     };
 
     const handleAddAssignments = async e => {
@@ -38,10 +67,20 @@ const CreateAssignments = () => {
         const marks = form.marks.value;
         const thumbnail = form.thumbnail.value;
         const level = form.level.value;
+        const dateInput = form.dateInput.value;
         const creatorEmail = form.creatorEmail.value;
 
+        if (isPastOrToday(selectedDate)) {
+            setError('Please select a future date.');
+        } else {
+            setError(''); // Clear any previous error message
+            // Process the form submission here
+            // For example, you can submit the form using AJAX or proceed with the next steps
+            console.log('Form submitted successfully');
+        }
+
         const addAssignments = {
-            title, description, marks: parseInt(marks), thumbnail, level, date: startDate, create: {
+            title, description, marks: parseInt(marks), thumbnail, level, dateInput, create: {
                 creatorEmail,
                 photoURL: user?.photoURL,
                 name: user?.displayName,
@@ -70,8 +109,10 @@ const CreateAssignments = () => {
                     form.reset()
                 }
             })
-
     }
+
+
+
     return (
         <div className="h-[550px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
             {/*  */}
@@ -105,7 +146,7 @@ const CreateAssignments = () => {
                                 max="60"
                                 value={marks}
                                 onChange={handleMarksChange} name="marks" placeholder="Marks" className="input input-bordered" required />
-                                <span className="text-red-600">{validationMessage}</span>
+                            <span className="text-red-600">{validationMessage}</span>
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -131,7 +172,15 @@ const CreateAssignments = () => {
                             <label className="label">
                                 <span className="label-text">Due_Date</span>
                             </label>
-                            <DatePicker className=" p-3 border border-blue-200 rounded-md w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
+                            {/* onChange={(date) => setStartDate(date)} */}
+                            <input type="date"
+                                id="dateInput"
+                                name="dateInput"
+                                value={selectedDate}
+                                onChange={handleChange}
+                                min={getTomorrowDate()} // Set min attribute to tomorrow's date
+                                max="9999-12-31"  className="p-3 border-blue-50 rounded-md" required/>
+                            {error && <span style={{ color: 'red' }}>{error}</span>}
                         </div>
                     </div>
                     {/* marks and thumbnail */}

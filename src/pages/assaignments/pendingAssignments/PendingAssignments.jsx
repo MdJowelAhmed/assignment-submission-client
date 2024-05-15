@@ -11,7 +11,7 @@ const PendingAssignments = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`${import.meta.env.VITE_API_URL}/submission/${status}`)
+            fetch(`${import.meta.env.VITE_API_URL}/pending`)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data)
@@ -34,28 +34,30 @@ const PendingAssignments = () => {
                                 {/* head */}
                                 <thead>
                                     <tr>
-                                       
-                                        <th>title</th>
-                                        <th>Job</th>
-                                        <th>Favorite Color</th>
-                                        <th></th>
+
+                                        <th>Title</th>
+                                        <th>Marks</th>
+                                        <th>Examinee Name</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {/* row 1 */}
                                     <tr>
-                                        
+
                                         <td>
                                             <div className="">
-                                             <h2>{p.title?.substring(0,20)} </h2>
+                                                <h2>{p.title?.substring(0, 30)}... </h2>
                                             </div>
                                         </td>
                                         <td>
-                                           <p>{p.marks} </p>
+                                            <p>{p.marks} </p>
                                         </td>
-                                            <h1>{p.submit.name} </h1>
+                                        <div className="flex items-center">
+                                            <h1 className="mt-3">{p.submit.name} </h1>
+                                        </div>
                                         <th>
-                                            <Link to={`/giveMarks/${p._id}`}> <button className="btn btn-ghost btn-xs">Give Marks</button> </Link>
+                                            <Link to={`/giveMarks/${p._id}`}> <button className="btn btn-success btn-sm">Give Marks</button> </Link>
                                         </th>
                                     </tr>
 

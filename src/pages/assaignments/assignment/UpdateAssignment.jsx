@@ -47,7 +47,7 @@ const UpdateAssignment = () => {
                 console.log(data)
                 if (data.modifiedCount) {
                     Swal.fire({
-                        title: "Assignments create success!",
+                        title: "Assignments update success!",
                         text: "You clicked the button!",
                         icon: "success"
                     });

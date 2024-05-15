@@ -1,11 +1,14 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../components/hooks/useAuth";
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 import Swal from 'sweetalert2'
 import { useState } from "react";
 
 const Register = () => {
     const { createUser,signInWithGoogle } = useAuth()
+    const [showPassword,setShowPassword]=useState(false)
+    const [password, setPassword] = useState('');
     const navigate = useNavigate()
     const location=useLocation()
     const [regError, setRegError] = useState('')
@@ -18,8 +21,24 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const newUser = { name, photoURL, email, password }
-        console.log(newUser)
+        // console.log(newUser)
         setRegError('')
+
+        if (password.length < 6) {
+            setRegError('Password must be at least 6 characters long');
+            return;
+          }
+
+        if (!/(?=.*[a-z])/.test(password)) {
+            setRegError('Password must contain at least one lowercase letter');
+            return;
+          }
+      
+          if (!/(?=.*[A-Z])/.test(password)) {
+            setRegError('Password must contain at least one uppercase letter');
+            return;
+          }
+
         createUser(email, password)
             .then(result => {
                 if (result.user) {
@@ -36,6 +55,33 @@ const Register = () => {
                 setRegError(error.message)
             })
     }
+
+    const handleChange = (e) => {
+        setPassword(e.target.value);
+      };
+
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    
+    //     // Reset error message
+    //     setRegError('');
+    
+    //     // Check password requirements
+    //     if (!/(?=.*[a-z])/.test(password)) {
+    //       setRegError('Password must contain at least one lowercase letter');
+    //       return;
+    //     }
+    
+    //     if (!/(?=.*[A-Z])/.test(password)) {
+    //       setRegError('Password must contain at least one uppercase letter');
+    //       return;
+    //     }
+    
+       
+    
+    //     // Password meets all requirements
+    //     alert('Password meets all requirements!');
+    //   };
 
     const handleSocialLogin = socialProvider => {
         socialProvider()
@@ -84,13 +130,19 @@ const Register = () => {
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input onChange={handleChange} type={showPassword ?"text" :"password"} name="password" value={password} placeholder="password" className="input input-bordered" required />
 
                             </div>
+                            <div onClick={()=>setShowPassword(!showPassword)} className="absolute ml-72 bottom-60">
+                                    {
+                                       showPassword ?  <FaEye /> :  <FaEyeSlash />
+                                    }
+                                </div>
+
                             <div className="form-control mt-6">
                                 <input className="btn btn-secondary" type="submit" value="Register" />
                             </div>

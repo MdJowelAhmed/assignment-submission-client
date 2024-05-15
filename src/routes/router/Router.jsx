@@ -35,22 +35,22 @@ const router = createBrowserRouter([
             },
             {
                 path: '/attempt',
-                element: <MyAttempt></MyAttempt>,
+                element: <PrivateRoute></PrivateRoute>,
                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/submission`)
             },
             {
                 path: '/details/:id',
-                element: <DetailsAss></DetailsAss>,
+                element: <PrivateRoute><DetailsAss></DetailsAss></PrivateRoute>,
                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
             },
             {
                 path: '/submit/:id',
-                element: <Submission></Submission>,
+                element: <PrivateRoute><Submission></Submission></PrivateRoute>,
                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)
             },
             {
                 path: '/update/:id',
-                element: <UpdateAssignment></UpdateAssignment>,
+                element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
                 loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/assignment/${params.id}`)
 
                 // loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/assignment`)

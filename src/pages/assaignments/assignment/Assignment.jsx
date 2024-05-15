@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../../components/hooks/useAuth";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 
 const Assignment = () => {
@@ -11,8 +12,8 @@ const Assignment = () => {
     // console.log(loadedAssignment)
     const [filter, setFilter] = useState('All'); 
     const [items, setItems] = useState([]);
+    const { user } = useAuth()
 
-    // const { user } = useAuth()
     // const [difficulty, setDifficulty] = useState('Easy');
     // const [assignments, setAssignments] = useState(loadedAssignment);
 
@@ -21,9 +22,8 @@ const Assignment = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-              // Make a GET request to fetch items data from an API
               const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
-              setItems(response.data); // Update items state with fetched data
+              setItems(response.data); 
             } catch (error) {
               console.error('Error fetching items:', error);
             }
@@ -47,32 +47,19 @@ const Assignment = () => {
 
       const filteredItems = filter === 'All' ? items : items.filter(assignment => assignment.level === filter);
 
-
-    // console.log(loadedAssignment.create.creatorEmail)
-
-    // useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}/assignment/${loadedAssignment._id}`)
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             // console.log(data)
-    //             setItem(data)
+    // console.log(items)
+    //   console.log(items?.level)
+    //   console.log(loadedAssignment.level)
+    //   console.log(items?.create?.creatorEmail)
+    //     console.log(user?.email)
 
 
-    //         });
-    // }, [item,loadedAssignment._id]);
-
-
-    // const handleDifficultyChange = (event) => {
-    //     setfilter(event.target.value);
-    // };
-    // const filteredAssignments = filter === 'all' ? assignments : assignments.filter(assignment => assignment.difficulty === filter);
-
-
-    const handleDelete = id => {
-        console.log(id)
-        // if( loadedAssignment.create?.creatorEmail !== user?.email  ){
-        // 	alert('delete for not parmied')
-        // }
+    const handleDelete = (id,email) => {
+        // console.log(data.create.creatorEmail)
+        if( email !== user?.email){
+            return  toast.error('Deleting for not permit you!')
+        }
+      
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",

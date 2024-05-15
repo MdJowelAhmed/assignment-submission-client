@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../../components/hooks/useAuth";
 import Swal from "sweetalert2";
 
@@ -7,6 +7,7 @@ const Submission = () => {
     const loadedDetails = useLoaderData()
     const { user } = useAuth()
     const { id } = useParams()
+    const navigate=useNavigate()
     const details = loadedDetails.find(item => item._id == id)
     const { _id, title, description, marks, thumbnail, level, date, create } = details;
 
@@ -43,7 +44,8 @@ const Submission = () => {
                         text: "You clicked the button!",
                         icon: "success"
                     });
-                    //   form.reset()
+                      form.reset()
+                      navigate('/pending')
                 }
             })
     }

@@ -39,10 +39,11 @@ const MyAttempt = () => {
                     <thead>
                         <tr>
                             
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Total Marks</th>
+                            <th>Got Marks</th>
+                            <th>Feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +52,7 @@ const MyAttempt = () => {
                             
                             <td>
                                 <div className="flex items-center gap-3">
-                                    <h2>{p.title} </h2>
+                                    <h2>{p.title?.substring(0,30)} </h2>
                                    
                                   
                                 </div>
@@ -60,9 +61,12 @@ const MyAttempt = () => {
                                <p>{p.status} </p>
                             </td>
                             <td>{p.marks} </td>
-                            <th>
+                            <td>{p.mark} </td>
+                            <td>{p.feedback} </td>
+
+                            {/* <th>
                                 <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
+                            </th> */}
                         </tr>
                        
                        

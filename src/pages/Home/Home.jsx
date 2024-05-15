@@ -6,7 +6,9 @@ import Features from "./Features";
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            <div className="">
+                <Banner></Banner>
+            </div>
 
             <div className="my-20">
                 <Features></Features>

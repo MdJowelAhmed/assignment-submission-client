@@ -35,7 +35,7 @@ const Navbar = () => {
         <div>
 
 
-            <div className=" ">
+            <div className="z-index ">
                 <div className="navbar bg-base-100">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -101,19 +101,19 @@ const Navbar = () => {
 
                         </ul>
                     </div>
-                    <div className="navbar-end flex">
+                    <div className="navbar-end z-50 flex">
 
                         <div className="flex items-center gap-2">
 
                             <div>
                                 {
-                                    user ? <div className="dropdown dropdown-hover">
+                                    user ? <div className="dropdown  dropdown-hover">
                                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
                                                 <img src={user?.photoURL || <CgProfile />} />
                                             </div>
                                         </label>
-                                        <ul tabIndex={0} className="menu  dropdown-content  shadow bg-base-100 rounded-box w-40 ">
+                                        <ul tabIndex={0} className="menu  dropdown-content  shadow bg-base-100 rounded-box w-40 z-[1]">
                                             <li>
                                                 <Link to='/attempt'>
                                                     <button className="btn btn-sm  btn-ghost">My Attempted</button></Link>

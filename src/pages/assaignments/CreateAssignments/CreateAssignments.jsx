@@ -116,13 +116,13 @@ const CreateAssignments = () => {
 
 
     return (
-        <div className="h-[610px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
+        <div className="lg:h-[610px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
             {/*  */}
 
-            <div className="flex flex-col md:flex-row gap-5 md:gap-10 p-12">
-                <form onSubmit={handleAddAssignments} className="w-2/3">
+            <div className="flex flex-col-reverse md:flex-row gap-5 md:gap-10 md:p-12 ">
+                <form onSubmit={handleAddAssignments} className="md:w-2/3">
                     {/* title and description */}
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">Title</span>
@@ -137,7 +137,7 @@ const CreateAssignments = () => {
                         </div>
                     </div>
                     {/* marks and thumbnail */}
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">Marks</span>
@@ -158,7 +158,7 @@ const CreateAssignments = () => {
                         </div>
                     </div>
                     {/* level and date */}
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text"> assignment difficulty level</span>
@@ -186,7 +186,7 @@ const CreateAssignments = () => {
                         </div>
                     </div>
                     {/* marks and thumbnail */}
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12">
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">Creator_Email</span>
@@ -197,9 +197,9 @@ const CreateAssignments = () => {
                     </div>
                     <input className="btn btn-block my-5 font-poppins bg-base-300" type="submit" value="Create Assignments" />
                 </form>
-                <div className="w-1/3">
+                <div className="md:w-1/3">
                     <div>
-                        <h2 className="text-center text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
+                        <h2 className="text-center text-2xl md:text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
                         <p className="text-center text-sm font-poppins pt-5">Create  a web-based task management system  using  task creation, assignment, status tracking, and real-time updates</p>
                     </div>
                     <img className="text-center m-3 mx-auto rounded-full" src={user?.photoURL} alt="" />

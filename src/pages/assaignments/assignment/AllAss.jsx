@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import useAuth from '../../../components/hooks/useAuth';
+import { motion, useScroll } from "framer-motion"
 
 const AllAss = ({ assignment,handleDelete }) => {
 	const { _id, thumbnail, title, marks, level,create } = assignment;
@@ -25,7 +26,9 @@ const AllAss = ({ assignment,handleDelete }) => {
 
 	
 	return (
-		<div className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
+		<motion.div   initial={{ opacity: 0, y: -50 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 4 }} className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
 			{/* <div className="flex space-x-4">
 		<img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
 		<div className="flex flex-col space-y-1">
@@ -85,7 +88,7 @@ const AllAss = ({ assignment,handleDelete }) => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

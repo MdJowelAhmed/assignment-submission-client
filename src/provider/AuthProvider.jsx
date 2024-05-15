@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
                     })
             }
             else {
-                axios.post(`${import.meta.env.VITE_API_URL}/logout`, loggedUser, {
+                axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
                     withCredentials: true
                 })
                     .then(res => {
@@ -77,7 +77,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             return unsubscribe()
         }
-    }, [])
+    }, [user])
 
     const authInfo = {
         user,

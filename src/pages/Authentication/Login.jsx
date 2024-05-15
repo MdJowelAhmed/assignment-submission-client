@@ -75,14 +75,14 @@ const Login = () => {
     return (
         <div>
             {/* https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_23-2148423542.jpg?t=st=1715337413~exp=1715341013~hmac=53f383d90e738e76a5fc2ef7f1edb225a0a4b5827b63393ca305917a194d00ef&w=826 */}
-            <div className="hero min-h-screen " style={{backgroundImage: 'url(https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_23-2148423542.jpg?t=st=1715337413~exp=1715341013~hmac=53f383d90e738e76a5fc2ef7f1edb225a0a4b5827b63393ca305917a194d00ef&w=826)'}}>
-                <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="md:hero min-h-screen " style={{backgroundImage: 'url(https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_23-2148423542.jpg?t=st=1715337413~exp=1715341013~hmac=53f383d90e738e76a5fc2ef7f1edb225a0a4b5827b63393ca305917a194d00ef&w=826)'}}>
+                <div className="md:hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                        <img className="h-[400px] w-[400px] lg:ml-20 rounded-3xl" src="https://img.freepik.com/premium-photo/premium-web-page-security-lock-screen-icon-3d-rendering-isolated-background_150525-4263.jpg?w=740" alt="" />
                     </div>
-                    <div className="card shrink-0 w-1/2 shadow-2xl bg-base-300">
+                    <div className="card shrink-0 md:w-1/2 shadow-2xl bg-base-300">
                         <form onSubmit={handleSignInUser} className="card-body">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-2xl md:text-5xl font-bold">Login now!</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

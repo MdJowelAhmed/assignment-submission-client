@@ -49,7 +49,9 @@ const GiveMarks = () => {
             <div className="bg-base-20 shadow-xl max-w-lg rounded-lg mx-auto p-10 space-y-2">
                 <h2 className=" font-poppins text-xl text-rose-400 "> Title :{giveMark?.title} </h2>
 
-                <p className=" font-poppins">Pdf/Docs File: <a href=''><span className="font-poppins text-xl text-blue-600">{giveMark?.file}</span></a> </p>
+                <iframe src={giveMark?.file} title="Pdf/Docs File"></iframe>
+
+                {/* <p className=" font-poppins">Pdf/Docs File: <a href=''><span className="font-poppins text-xl text-blue-600">{giveMark?.file}</span></a> </p> */}
 
                 <div >
                     <p className=" font-poppins">Note: <span className="font-poppins text-xl text-green-600"> {giveMark?.note}</span> </p>

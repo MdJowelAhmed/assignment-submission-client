@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../../components/hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
+import {motion} from "framer-motion"
 
 
 const Assignment = () => {
@@ -108,11 +109,13 @@ const Assignment = () => {
             </div>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
+            <motion.div  initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 4 }} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
                 {
                     filteredItems.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
                 }
-            </div>
+            </motion.div>
         </div >
     );
 };

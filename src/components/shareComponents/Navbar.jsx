@@ -13,9 +13,9 @@ import useAuth from "../hooks/useAuth"
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
-    useEffect(() => {
-        Aos.init()
-    }, [])
+    // useEffect(() => {
+    //     Aos.init()
+    // }, [])
     const [theme, setTheme] = useState('light')
 
     useEffect(() => {
@@ -35,9 +35,7 @@ const Navbar = () => {
         <div>
 
 
-            <div className=" my-6 pb-10" data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1500">
+            <div className=" ">
                 <div className="navbar bg-base-100">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -45,13 +43,15 @@ const Navbar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                {/* <NavLink to='/' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
-                                    <button > Home Page</button>
-                                </NavLink> */}
+                               
+                                 <NavLink to='/' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
+                                    <button > Home</button>
+                                </NavLink>
+
                                 <NavLink to='/assignments' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
                                     <button > Assignments</button>
                                 </NavLink>
-
+                               
                                 <div>
                                     {
                                         user ? <div>
@@ -74,12 +74,14 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
-                            {/* <NavLink to='/' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
-                                <button > Home Page</button>
-                            </NavLink> */}
+                           
+                             <NavLink to='/' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
+                                <button > Home</button>
+                            </NavLink>
                             <NavLink to='/assignments' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
                                 <button > Assignments</button>
                             </NavLink>
+                           
 
                             <div>
                                 {

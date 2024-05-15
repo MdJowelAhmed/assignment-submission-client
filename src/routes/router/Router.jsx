@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/attempt',
-                element: <PrivateRoute></PrivateRoute>,
+                element: <PrivateRoute> <MyAttempt></MyAttempt> </PrivateRoute>,
                 loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/submission`)
             },
             {

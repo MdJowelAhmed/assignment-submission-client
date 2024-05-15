@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../../components/hooks/useAuth";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
@@ -9,7 +9,8 @@ const UpdateAssignment = () => {
     const assignment = useLoaderData()
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useAuth()
-    console.log(assignment)
+    const navigate=useNavigate()
+    // console.log(assignment)
     const{ _id, title, description, marks, thumbnail, level, date}=assignment
 
     const handleUpdateAssignments = async e => {
@@ -51,7 +52,8 @@ const UpdateAssignment = () => {
                         text: "You clicked the button!",
                         icon: "success"
                     });
-                    // form.reset()
+                    form.reset()
+                    navigate('/assignments')
                 }
             })
 

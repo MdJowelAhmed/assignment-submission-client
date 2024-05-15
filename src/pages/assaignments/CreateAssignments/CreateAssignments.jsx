@@ -5,6 +5,7 @@ import useAuth from "../../../components/hooks/useAuth";
 // import axios from 'axios'
 // import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CreateAssignments = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -13,6 +14,7 @@ const CreateAssignments = () => {
     const [validationMessage, setValidationMessage] = useState('');
     const [selectedDate, setSelectedDate] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate()
 
 
     const handleMarksChange = (event) => {
@@ -73,9 +75,8 @@ const CreateAssignments = () => {
         if (isPastOrToday(selectedDate)) {
             setError('Please select a future date.');
         } else {
-            setError(''); // Clear any previous error message
-            // Process the form submission here
-            // For example, you can submit the form using AJAX or proceed with the next steps
+            setError('');
+
             console.log('Form submitted successfully');
         }
 
@@ -107,6 +108,7 @@ const CreateAssignments = () => {
                         icon: "success"
                     });
                     form.reset()
+                    navigate('/assignments')
                 }
             })
     }
@@ -114,9 +116,9 @@ const CreateAssignments = () => {
 
 
     return (
-        <div className="h-[550px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
+        <div className="h-[610px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
             {/*  */}
-            <h2 className="text-center text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
+
             <div className="flex flex-col md:flex-row gap-5 md:gap-10 p-12">
                 <form onSubmit={handleAddAssignments} className="w-2/3">
                     {/* title and description */}
@@ -145,7 +147,7 @@ const CreateAssignments = () => {
                                 min="30"
                                 max="60"
                                 value={marks}
-                                onChange={handleMarksChange} name="marks" placeholder="Marks" className="input input-bordered" required />
+                                onChange={handleMarksChange} name="marks" placeholder="Marks under 60" className="input input-bordered" required />
                             <span className="text-red-600">{validationMessage}</span>
                         </div>
                         <div className="form-control flex-1">
@@ -166,7 +168,7 @@ const CreateAssignments = () => {
                                 <option value="Medium">Medium</option>
                                 <option value="Hard">Hard</option>
                             </select>
-                            {/* <input type="text" name="marks" placeholder="Marks" className="input input-bordered" required /> */}
+
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -179,7 +181,7 @@ const CreateAssignments = () => {
                                 value={selectedDate}
                                 onChange={handleChange}
                                 min={getTomorrowDate()} // Set min attribute to tomorrow's date
-                                max="9999-12-31"  className="p-3 border-blue-50 rounded-md" required/>
+                                max="9999-12-31" className="p-3 border-blue-50 rounded-md" required />
                             {error && <span style={{ color: 'red' }}>{error}</span>}
                         </div>
                     </div>
@@ -191,18 +193,18 @@ const CreateAssignments = () => {
                             </label>
                             <input type="email" defaultValue={user?.email} name="creatorEmail" placeholder="Creator_Email" className="input input-bordered" required disabled />
                         </div>
-                        {/* <div className="form-control flex-1">
-                            <label className="label">
-                                <span className="label-text">Thumbnail_URL</span>
-                            </label>
-                            <input type="text" name="description" placeholder="Thumbnail_URL" className="input input-bordered" required />
-                        </div> */}
+
                     </div>
                     <input className="btn btn-block my-5 font-poppins bg-base-300" type="submit" value="Create Assignments" />
                 </form>
                 <div className="w-1/3">
+                    <div>
+                        <h2 className="text-center text-4xl font-poppins font-semibold pt-5">Create a new assignments</h2>
+                        <p className="text-center text-sm font-poppins pt-5">Create  a web-based task management system  using  task creation, assignment, status tracking, and real-time updates</p>
+                    </div>
                     <img className="text-center m-3 mx-auto rounded-full" src={user?.photoURL} alt="" />
                     <p className="text-center font-poppins text-3xl text-orange-500"> {user?.displayName} </p>
+                    <p className="text-center font-poppins text-3xl text-orange-500">  </p>
                 </div>
             </div>
         </div>

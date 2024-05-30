@@ -72,8 +72,8 @@ const Navbar = () => {
                         </div>
                         <Link to='/'><img className="h-20 w-20 rounded-full" src="https://img.freepik.com/premium-vector/initial-monogram-letter-b-logo-design-vector-graphic-alphabet-symbol-corporate-business_565585-476.jpg?w=826" alt="" /></Link>
                     </div>
-                    <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+                    <div className="navbar-center z-50 hidden lg:flex">
+                        <ul className="menu menu-horizontal z-[1] px-1">
                            
                              <NavLink to='/' className={({ isActive }) => isActive ? "btn btn-primary mx-3 font-semibold text-xl" : "btn btn-secondary mx-3"}>
                                 <button > Home</button>

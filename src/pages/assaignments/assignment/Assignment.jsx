@@ -5,15 +5,16 @@ import Swal from "sweetalert2";
 import useAuth from "../../../components/hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
 
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
     // console.log(loadedAssignment)
-    const [filter, setFilter] = useState('All'); 
+    const [filter, setFilter] = useState('All');
     const [items, setItems] = useState([]);
     const { user } = useAuth()
+    const pages = [1, 2, 3, 4, 5]
 
     // const [difficulty, setDifficulty] = useState('Easy');
     // const [assignments, setAssignments] = useState(loadedAssignment);
@@ -23,30 +24,30 @@ const Assignment = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-              const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
-              setItems(response.data); 
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
+                setItems(response.data);
             } catch (error) {
-              console.error('Error fetching items:', error);
+                console.error('Error fetching items:', error);
             }
-          };
-      
-          fetchItems();
+        };
 
-      
-            // axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
-            // .then(response => {
-            //   setItems(response.data); // Update items state with fetched data
-            // })
-            // .catch(error => {
-            //   console.error('Error fetching items:', error);
-            // });
+        fetchItems();
+
+
+        // axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
+        // .then(response => {
+        //   setItems(response.data); // Update items state with fetched data
+        // })
+        // .catch(error => {
+        //   console.error('Error fetching items:', error);
+        // });
     }, [])
     // console.log(items)
     const handleFilterChange = (event) => {
         setFilter(event.target.value);
-      };
+    };
 
-      const filteredItems = filter === 'All' ? items : items.filter(assignment => assignment.level === filter);
+    const filteredItems = filter === 'All' ? items : items.filter(assignment => assignment.level === filter);
 
     // console.log(items)
     //   console.log(items?.level)
@@ -55,12 +56,12 @@ const Assignment = () => {
     //     console.log(user?.email)
 
 
-    const handleDelete = (id,email) => {
+    const handleDelete = (id, email) => {
         // console.log(data.create.creatorEmail)
-        if( email !== user?.email){
-            return  toast.error('Deleting for not permit you!')
+        if (email !== user?.email) {
+            return toast.error('Deleting for not permit you!')
         }
-      
+
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -109,11 +110,22 @@ const Assignment = () => {
             </div>
 
 
-            <motion.div  className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
+            <motion.div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-7">
                 {
                     filteredItems.map(assignment => <AllAss assignment={assignment} key={assignment._id} handleDelete={handleDelete}></AllAss>)
                 }
             </motion.div>
+
+            <div className="flex my-12 gap-4 lg:mx-20">
+                <button className="btn"> Previous</button>
+                <div>
+                    {
+                        pages.map(btnNum=>(<button className="btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white" key={btnNum}> {btnNum}</button>))
+                    }
+                </div>
+                <button className="btn"> Next</button>
+              
+            </div>
         </div >
     );
 };

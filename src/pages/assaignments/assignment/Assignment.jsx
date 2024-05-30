@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
    const [itemsPerPage,setItemsPerPage]=useState(3)
+   const [currentPage,setCurrentPage]=useState('')
    const [count,setCount]=useState(0)
     const [filter, setFilter] = useState('All');
     const [items, setItems] = useState([]);
@@ -23,7 +24,7 @@ const Assignment = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment?page=${currentPage}&size=${itemsPerPage}`);
                 setItems(response.data);
                 
             } catch (error) {
@@ -32,14 +33,14 @@ const Assignment = () => {
         };
 
         fetchItems();
-    }, [])
+    }, [currentPage,itemsPerPage])
 
     useEffect(() => {
         const countData = async () => {
             try {
                 const res = await axios.get(`${import.meta.env.VITE_API_URL}/countAssignments`);
                 setCount(res.data.count)
-                console.log(res.data)
+                
             } catch (error) {
                 console.error('Error fetching items:', error);
             }
@@ -47,7 +48,14 @@ const Assignment = () => {
 
         countData();
     }, [])
-    console.log(count,itemsPerPage)
+    // console.log(count,itemsPerPage)
+
+    const handlePaginationButton=(value)=>{
+        console.log(value)
+        setCurrentPage(value)
+    } 
+    console.log(currentPage)
+
     const page=Math.ceil(count/itemsPerPage)
     const pages = [...Array(page).keys()].map(Element=>Element +1)
 
@@ -128,7 +136,7 @@ const Assignment = () => {
                 <button className="btn"> Previous</button>
                 <div>
                     {
-                        pages.map(btnNum=>(<button className="btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white" key={btnNum}> {btnNum}</button>))
+                        pages.map(btnNum=>(<button onClick={()=>handlePaginationButton(btnNum)} className="btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white" key={btnNum}> {btnNum}</button>))
                     }
                 </div>
                 <button className="btn"> Next</button>

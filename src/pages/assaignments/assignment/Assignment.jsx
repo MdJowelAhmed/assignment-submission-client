@@ -10,12 +10,11 @@ import { motion } from "framer-motion"
 
 const Assignment = () => {
     const loadedAssignment = useLoaderData()
-    // console.log(loadedAssignment)
+   const [itemsPerPage,setItemsPerPage]=useState(3)
+   const [count,setCount]=useState(0)
     const [filter, setFilter] = useState('All');
     const [items, setItems] = useState([]);
     const { user } = useAuth()
-    const pages = [1, 2, 3, 4, 5]
-
     // const [difficulty, setDifficulty] = useState('Easy');
     // const [assignments, setAssignments] = useState(loadedAssignment);
 
@@ -26,23 +25,32 @@ const Assignment = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`);
                 setItems(response.data);
+                
             } catch (error) {
                 console.error('Error fetching items:', error);
             }
         };
 
         fetchItems();
-
-
-        // axios.get(`${import.meta.env.VITE_API_URL}/assignment`)
-        // .then(response => {
-        //   setItems(response.data); // Update items state with fetched data
-        // })
-        // .catch(error => {
-        //   console.error('Error fetching items:', error);
-        // });
     }, [])
-    // console.log(items)
+
+    useEffect(() => {
+        const countData = async () => {
+            try {
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/countAssignments`);
+                setCount(res.data.count)
+                console.log(res.data)
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        };
+
+        countData();
+    }, [])
+    console.log(count,itemsPerPage)
+    const page=Math.ceil(count/itemsPerPage)
+    const pages = [...Array(page).keys()].map(Element=>Element +1)
+
     const handleFilterChange = (event) => {
         setFilter(event.target.value);
     };

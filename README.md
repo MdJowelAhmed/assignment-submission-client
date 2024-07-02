@@ -4,7 +4,7 @@ Welcome to assignments submission, your go-to platform for seamless coding assig
 
 ## Live Site
 
-You can access the live site [here](https://assignments-submission.web.app).
+You can access the live site [assignment-submission](https://assignments-submission.web.app).
 
 ## Features
 

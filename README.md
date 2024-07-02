@@ -14,4 +14,14 @@ You can access the live site [assignment-submission](https://assignments-submiss
 - **Community Engagement:** Join a vibrant community of learners and educators, share insights, and collaborate on coding projects to enhance your skills collectively.
 - **Progress Tracking:** Keep track of your progress over time, visualize your learning journey, and set personal goals to stay motivated and focused.
 
+  
+## Technology
+
+- **React** 
+- **JavaScript** 
+- **CSS** 
+- **HTML** 
+- **MongoDB** 
+- **Node.Js** 
+- **Express** 
 

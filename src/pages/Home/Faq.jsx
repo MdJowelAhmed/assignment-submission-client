@@ -8,7 +8,7 @@ const Faq = () => {
             <section className="bg-white dark:bg-gray-900">
                 <div className="container px-6 py-12 mx-auto">
                     <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white text-center mt-16 mb-4">Assignment related some questions</h1>
-                    <p className="text-center">These questions can vary depending on the  specific <br /> assignment and course requirements, but they cover<br /> some common concerns students may have.</p>
+                    <p className="text-center">These questions can vary depending on the  specific  assignment and <br /> course requirements, but they cover some common concerns <br /> students may have.</p>
 
                     <div className="grid grid-cols-1 gap-8 mt-8 lg:my-16 md:grid-cols-2 xl:grid-cols-3">
                         <div>

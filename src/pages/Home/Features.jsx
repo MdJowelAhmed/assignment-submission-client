@@ -10,7 +10,7 @@ const Features = () => {
         <div className="" >
             {/* feature one  */}
             <section className="dark:bg-gray-100 dark:text-gray-800 " >
-                <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl" >
+                <div className="container max-w-xl p-6 py-12 mx-auto space-y-16 lg:px-8 lg:max-w-7xl" >
                     <div data-aos="zoom-in-up"
                         data-aos-easing="linear"
                         data-aos-duration="1500">

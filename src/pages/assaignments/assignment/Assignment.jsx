@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 
 const Assignment = () => {
-    const loadedAssignment = useLoaderData()
+    // const loadedAssignment = useLoaderData()
    const [itemsPerPage,setItemsPerPage]=useState(3)
    const [currentPage,setCurrentPage]=useState('')
    const [count,setCount]=useState(0)
@@ -136,7 +136,7 @@ const Assignment = () => {
                 <button className="btn"> Previous</button>
                 <div>
                     {
-                        pages.map(btnNum=>(<button onClick={()=>handlePaginationButton(btnNum)} className="btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white" key={btnNum}> {btnNum}</button>))
+                        pages.map(btnNum=>(<button onClick={()=>handlePaginationButton(btnNum)} className={`${currentPage===btnNum ? 'btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white': 'btn px-7  mx-1'}`} key={btnNum}> {btnNum}</button>))
                     }
                 </div>
                 <button className="btn"> Next</button>

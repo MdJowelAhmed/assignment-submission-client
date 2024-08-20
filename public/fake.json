@@ -1,0 +1,63 @@
+[
+    {
+      "title": "JavaScript Essentials",
+      "description": "A comprehensive guide to the fundamentals of JavaScript, including variables, functions, and loops.",
+      "link": "https://www.w3schools.com/js/",
+      "category": "JavaScript",
+      "tags": ["JavaScript", "Programming", "Basics"],
+      "createdAt": "2024-05-15T10:00:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220714150931/JavaScript-Introduction.jpg"
+    },
+    {
+      "title": "CSS Flexbox and Grid Layouts",
+      "description": "Learn how to create responsive layouts using CSS Flexbox and Grid.",
+      "link": "https://i.ytimg.com/vi/5OPPLNmlXhg/maxresdefault.jpg",
+      "category": "CSS",
+      "tags": ["CSS", "Flexbox", "Grid", "Responsive Design"],
+      "createdAt": "2024-05-22T10:05:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods"
+    },
+    {
+      "title": "React Hooks Deep Dive",
+      "description": "An in-depth look at React Hooks like useState, useEffect, and custom hooks.",
+      "link": "https://medium.com/@kc_clintone/mastering-react-hooks-a-deep-dive-f3a370a4e44d",
+      "category": "React",
+      "tags": ["React", "Hooks", "useState", "useEffect"],
+      "createdAt": "2024-05-29T10:10:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLzpi_i_OEaom5dmosfiDDtK5BqYh4pq1yDffN005ODLvfFuycd0YuIvt70RYNFl1OUG4&usqp=CAU"
+    },
+    {
+      "title": "HTML5 Semantic Elements",
+      "description": "A guide to understanding and using semantic elements in HTML5 for better structure and accessibility.",
+      "link": "https://www.w3schools.com/html/html5_semantic_elements.asp",
+      "category": "HTML",
+      "tags": ["HTML", "Semantic", "Accessibility"],
+      "createdAt": "2024-06-05T10:15:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1mJi9mmRaPDaM9B41kD-_w2KTOV83S4WsgA&s"
+    },
+    {
+      "title": "Node.js and Express Basics",
+      "description": "An introduction to building backend applications with Node.js and Express.js.",
+      "link": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction",
+      "category": "Node.js",
+      "tags": ["Node.js", "Express.js", "Backend"],
+      "createdAt": "2024-06-12T10:20:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_hUpvbA8cNJpYmycgdcS6PVlQ-F9AVTWuNA&s"
+    },
+    {
+      "title": "Mastering the DOM",
+      "description": "A detailed guide on how to interact with and manipulate the Document Object Model (DOM) in web development.",
+      "link": "https://dev.to/dipakahirav/mastering-dom-manipulation-in-javascript-5dcc",
+      "category": "DOM",
+      "tags": ["DOM", "JavaScript", "Web Development"],
+      "createdAt": "2024-06-18T10:25:00Z",
+      "author": "Md Jowel Ahmed",
+      "image": "https://media.dev.to/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg2h7ptn1yqz2ts7yc9eq.jpg"
+    }
+  ]
+  

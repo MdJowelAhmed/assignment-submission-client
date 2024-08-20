@@ -1,16 +1,20 @@
 import Banner from "./Banner";
 import Faq from "./Faq";
 import Features from "./Features";
+import Material from "./materials/Material";
 
 
 const Home = () => {
     return (
         <div>
-            <div className="">
+            <div className="mb-16">
                 <Banner></Banner>
             </div>
 
-            <div className="my-20">
+            <div className="">
+                <Material/>
+            </div>
+            <div className="">
                 <Features></Features>
             </div>
 

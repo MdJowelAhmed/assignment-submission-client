@@ -10,14 +10,13 @@ import { motion } from "framer-motion"
 
 const Assignment = () => {
     // const loadedAssignment = useLoaderData()
-   const [itemsPerPage,setItemsPerPage]=useState(3)
+   const [itemsPerPage,setItemsPerPage]=useState(6)
    const [currentPage,setCurrentPage]=useState('')
    const [count,setCount]=useState(0)
     const [filter, setFilter] = useState('All');
     const [items, setItems] = useState([]);
     const { user } = useAuth()
-    // const [difficulty, setDifficulty] = useState('Easy');
-    // const [assignments, setAssignments] = useState(loadedAssignment);
+  
 
 
 
@@ -54,7 +53,19 @@ const Assignment = () => {
         console.log(value)
         setCurrentPage(value)
     } 
-    console.log(currentPage)
+
+    const handleNextPage = () => {
+        if (currentPage < count) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePreviousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+   
 
     const page=Math.ceil(count/itemsPerPage)
     const pages = [...Array(page).keys()].map(Element=>Element +1)
@@ -64,12 +75,6 @@ const Assignment = () => {
     };
 
     const filteredItems = filter === 'All' ? items : items.filter(assignment => assignment.level === filter);
-
-    // console.log(items)
-    //   console.log(items?.level)
-    //   console.log(loadedAssignment.level)
-    //   console.log(items?.create?.creatorEmail)
-    //     console.log(user?.email)
 
 
     const handleDelete = (id, email) => {
@@ -133,14 +138,17 @@ const Assignment = () => {
             </motion.div>
 
             <div className="flex my-12 gap-4 lg:mx-20">
-                <button className="btn"> Previous</button>
+            <button onClick={handlePreviousPage} disabled={currentPage === 1} className="btn">
+                    Previous
+                </button>
                 <div>
                     {
                         pages.map(btnNum=>(<button onClick={()=>handlePaginationButton(btnNum)} className={`${currentPage===btnNum ? 'btn mx-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white': 'btn px-7  mx-1'}`} key={btnNum}> {btnNum}</button>))
                     }
                 </div>
-                <button className="btn"> Next</button>
-              
+                <button onClick={handleNextPage} disabled={currentPage === page} className="btn">
+                    Next
+                </button>
             </div>
         </div >
     );

@@ -9,51 +9,33 @@ import { useEffect, useState } from 'react';
 import useAuth from '../../../components/hooks/useAuth';
 import { motion, useScroll } from "framer-motion"
 
-const AllAss = ({ assignment,handleDelete }) => {
-	const { _id, thumbnail, title, marks, level,create } = assignment;
-	
-	
-	// const{user}=useAuth()
+const AllAss = ({ assignment, handleDelete }) => {
+	const { _id, thumbnail, title, marks, level, create,description } = assignment;
 
-	// useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}/assignment`)
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             // console.log(data)
-    //             setItem(data)
-    //         });
-    // }, [item]);
 
-	
 	return (
-		<motion.div   initial={{ opacity: 0, y: -50 }}
-		animate={{ opacity: 1, y: 0 }}
-		transition={{ duration: 4 }} className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
-			{/* <div className="flex space-x-4">
-		<img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
-		<div className="flex flex-col space-y-1">
-			<a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Leroy Jenkins</a>
-			<span className="text-xs dark:text-gray-600">4 hours ago</span>
-		</div>
-	</div> */}
+		<motion.div initial={{ opacity: 0, y: -50 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 4 }} className="flex flex-col  p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:bg-gray-50 dark:text-gray-800">
+
 			<div>
 				<img src={thumbnail} alt="" className=" w-full mb-4 rounded-t-full h-60  dark:bg-gray-500" />
 				<div className='flex justify-between pr-5'>
-					<h2 className="mb-1  font-medium font-poppins">{title} </h2>
-
-
+					<h2 className="mb-1 text-xl  font-medium font-poppins">{title} </h2>
 				</div>
+				
+				<p><span className=' font-poppins text-blue-500 font-bold'>description :</span> <span className=' font-poppins text-blue-500 opacity-80'>{description?.slice(0,100)} .....</span> </p>
+
 				<div className='flex justify-between pr-5'>
 					<p><span className='font-poppins text-blue-500 font-medium'>Marks :</span> <span className=' font-poppins text-blue-500 font-medium'>{marks}</span> </p>
 
-					<p><span className=' font-poppins text-blue-500 font-medium'>Level :</span> <span className='text-xl font-poppins text-blue-500 font-medium'>{level}</span> </p>
-
-
+					<p><span className=' font-poppins text-blue-500 font-medium'>Level :</span> <span className=' font-poppins text-blue-500 '>{level}</span> </p>
 				</div>
+
 				<div className='flex justify-between pr-5 mt-3'>
 					<Link to={`/update/${_id}`}><button className='btn btn-primary '><TiEdit className='text-4xl text-amber-300 ' /></button></Link>
 
-					<button onClick={()=>handleDelete(_id,create.creatorEmail)} className='btn btn-success'><MdDelete className='text-4xl text-amber-300' /></button>
+					<button onClick={() => handleDelete(_id, create.creatorEmail)} className='btn btn-success'><MdDelete className='text-4xl text-amber-300' /></button>
 
 					<Link to={`/details/${_id}`}><button className='btn btn-secondary'><FcViewDetails className='text-4xl text-amber-300 ' title='View Details' /></button></Link>
 				</div>
@@ -93,8 +75,8 @@ const AllAss = ({ assignment,handleDelete }) => {
 }
 
 AllAss.propTypes = {
-	assignment:PropTypes.object.isRequired,
-	handleDelete:PropTypes.func
+	assignment: PropTypes.object.isRequired,
+	handleDelete: PropTypes.func
 }
 
 export default AllAss

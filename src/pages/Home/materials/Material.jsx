@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Material = () => {
     const [materials, setMaterials] = useState([]);
@@ -17,13 +18,7 @@ const Material = () => {
 
         fetchMaterials();
     }, [])
-    const animateTitle = (title) => {
-        return title.split('').map((char, index) => (
-            <span key={index} style={{ animationDelay: `${0.1 * index}s` }}>
-                {char}
-            </span>
-        ));
-    };
+   
 
     return (
         <div className="container max-w-xl p-6  mx-auto  lg:px-8 lg:max-w-7xl">
@@ -33,7 +28,11 @@ const Material = () => {
             </div>
             <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {materials.map(material => (
-                    <div key={material._id} className="bg-white p-4 rounded-lg shadow-md">
+                    <motion.div    
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }} 
+                    key={material._id} 
+                    className="bg-white p-4 rounded-lg shadow-md">
                         <img
                             src={material.image}
                             alt={material.title}
@@ -60,7 +59,7 @@ const Material = () => {
                                 Learn More
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

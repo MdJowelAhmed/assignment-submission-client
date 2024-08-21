@@ -6,9 +6,16 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        poppins:"'Poppins', sans-serif"
-      }
+      keyframes: {
+        'top-down': {
+          '0%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(10px)' },
+          '100%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        'top-down': 'top-down 2s infinite ease-in-out',
+      },
     },
   },
   plugins: [require('daisyui')],

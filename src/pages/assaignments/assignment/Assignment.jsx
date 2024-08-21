@@ -124,7 +124,7 @@ const Assignment = () => {
                     <input
                         type="text"
                         placeholder="Search assignments..."
-                        className="px-4 py-2 border rounded-md w-full bg-gray-500  text-white "
+                        className="px-4 py-2 border rounded-md w-full bg-red-800 opacity-75  text-white "
                         value={searchTerm}
                         onChange={handleSearchChange}
                     />
@@ -133,7 +133,7 @@ const Assignment = () => {
                 {/* Filter Dropdown */}
                 <div className="">
                     <label className="mr-5">Level:</label>
-                    <select value={filter} onChange={handleFilterChange} className="btn btn-success text-white p-3 rounded-lg">
+                    <select value={filter} onChange={handleFilterChange} className="btn bg-red-800 opacity-75 text-white px-4 py-2 rounded-lg">
                         <option value="All">All</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>

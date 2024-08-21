@@ -7,6 +7,7 @@ import Material from "./materials/Material";
 import Instructors from "./instructors/Instructors"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Testimonials from "./testimonials/Testimonials";
 
 
 const Home = () => {
@@ -36,7 +37,7 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-7 mb-12">
                 {
-                    items.slice(0, 6).map(item => <AllAss key={item._id} assignment={item}></AllAss>)
+                    items.slice(2, 8).map(item => <AllAss key={item._id} assignment={item}></AllAss>)
                 }
 
             </div>
@@ -47,6 +48,8 @@ const Home = () => {
             <div className="">
                 <Material />
             </div>
+
+            <Testimonials/>
             <div className="">
                 <Features></Features>
             </div>

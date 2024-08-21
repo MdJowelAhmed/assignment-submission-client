@@ -54,7 +54,7 @@ const Material = () => {
                                 href={material.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-500 btn btn-secondary text-white mt-4 "
+                                className=" btn btn-secondary text-white mt-4 "
                             >
                                 Learn More
                             </a>

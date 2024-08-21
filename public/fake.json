@@ -1,132 +1,86 @@
 [
   {
-    "title": "Effective Study Techniques",
-    "content": "Develop a study schedule and stick to it. Break down your study sessions into smaller chunks with regular breaks in between.",
-    "author": "John Doe",
-    "createdAt": "2024-05-15T08:00:00Z",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeHHC9U0Z8QtJ6S49VkZqoTGnNvx5d6n0DCQ&s",
-    "category": "Study Tips",
-    "tags": [
-      "time management",
-      "focus",
-      "productivity"
-    ]
+      "user_name": "Alice Johnson",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYtAbACQfItTNeQ0z8hNo_Wr2I6Wwy5-tYUg&s",
+      "country": "USA",
+      "rating": 5,
+      "comment": "Seamless and user-friendly platform for submitting assignments. Highly recommended!"
   },
   {
-    "title": "Building a Growth Mindset",
-    "content": "Cultivate a growth mindset by embracing challenges, learning from criticism, and believing in your ability to improve.",
-    "author": "Alice Johnson",
-    "createdAt": "2024-06-29T19:00:00Z",
-    "imageUrl": "https://cdn.create.vista.com/api/media/medium/468056776/stock-photo-smiling-teacher-having-video-call-laptop-chalkboard-classroom?token=",
-    "category": "Personal Development",
-    "tags": [
-      "growth mindset",
-      "personal development",
-      "motivation"
-    ]
+      "user_name": "Bob Smith",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFnnjSFBLlcsDN724trHN3eB5eEzHfDU_C2A&s",
+      "country": "Canada",
+      "rating": 4,
+      "comment": "Easy to use, but adding a dark mode would improve the experience."
   },
   {
-    "title": "Preparing for Exams",
-    "content": "Start early, review your notes regularly, and practice with past exams to boost your confidence and performance.",
-    "author": "David Wilson",
-    "createdAt": "2024-06-05T14:30:00Z",
-    "imageUrl": "https://img.freepik.com/premium-photo/male-teacher-near-blackboard-classroom_392895-6591.jpg",
-    "category": "Exam Preparation",
-    "tags": [
-      "exams",
-      "study tips",
-      "practice"
-    ]
+      "user_name": "Charlie Brown",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2FoxQ9yfiiMcpZMlwK-YBOPGxLwDfhzQT16F-dnTbqG1utnAlYpd04h_c9A0OT8AfxO4&usqp=CAU",
+      "country": "UK",
+      "rating": 5,
+      "comment": "Excellent interface, very intuitive and clean. Great job overall!"
   },
   {
-    "title": "Stress Management",
-    "content": "Learn stress management techniques like deep breathing, meditation, and regular physical activity to cope with academic pressures.",
-    "author": "Jane Smith",
-    "createdAt": "2024-06-22T17:45:00Z",
-    "imageUrl": "https://thumbs.dreamstime.com/b/young-smiling-teacher-near-board-looking-ahead-young-teacher-near-board-107251380.jpg",
-    "category": "Mental Health",
-    "tags": [
-      "stress management",
-      "mental health",
-      "relaxation"
-    ]
+      "user_name": "David Lee",
+      "profile_pic": "https://e1.pxfuel.com/desktop-wallpaper/383/679/desktop-wallpaper-most-beautiful-stylish-profile-facebook-for-cool-girls-stylish-girls-thumbnail.jpg",
+      "country": "Australia",
+      "rating": 4,
+      "comment": "Good project, but a notification feature would make it even better."
   },
   {
-    "title": "Time Management Tips",
-    "content": "Prioritize your tasks based on urgency and importance. Use tools like to-do lists and calendar apps to stay organized.",
-    "author": "Jane Smith",
-    "createdAt": "2024-05-18T09:15:00Z",
-    "imageUrl": "https://www.shutterstock.com/image-photo/close-head-shot-portrait-preppy-260nw-1433809418.jpg",
-    "category": "Productivity",
-    "tags": [
-      "time management",
-      "organization",
-      "planning"
-    ]
+      "user_name": "Eve Adams",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Nzt4U2xaN4DyOhcPiF1jT-N7k7sC43J6BA&s",
+      "country": "Germany",
+      "rating": 5,
+      "comment": "Very efficient tool for tracking submissions. Simple and effective!"
   },
   {
-    "title": "Overcoming Procrastination",
-    "content": "Identify the reasons behind your procrastination and tackle them head-on. Use techniques like the Pomodoro technique to stay focused.",
-    "author": "Alice Johnson",
-    "createdAt": "2024-05-22T10:30:00Z",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI38nLM8_M9gib8V4bmig2dqS35rx2evbWngz6Ea_WT4XWCJxMcN4NfKfnJFVq6KJHjc8&usqp=CAU",
-    "category": "Motivation",
-    "tags": [
-      "procrastination",
-      "focus",
-      "motivation"
-    ]
+      "user_name": "Frank Miller",
+      "profile_pic": "https://pbs.twimg.com/profile_images/674335491802705920/_AmewjKA_400x400.jpg",
+      "country": "USA",
+      "rating": 4,
+      "comment": "Good project, but it could be faster. Performance improvements needed."
   },
   {
-    "title": "Mastering Online Learning",
-    "content": "Make the most out of your online courses by actively participating in discussions, staying organized, and seeking help when needed.",
-    "author": "Michael Lee",
-    "createdAt": "2024-05-25T11:45:00Z",
-    "imageUrl": "https://st2.depositphotos.com/46171552/46805/i/450/depositphotos_468054886-stock-photo-teacher-books-smiling-camera-classroom.jpg",
-    "category": "Online Learning",
-    "tags": [
-      "online learning",
-      "education",
-      "participation"
-    ]
+      "user_name": "Grace Wilson",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL13u-Davol3gBwYRTSImlRbGJS_VvtJg26w&s",
+      "country": "Canada",
+      "rating": 5,
+      "comment": "Straightforward submission process, very helpful for organizing assignments."
   },
   {
-    "title": "Balancing Work and Study",
-    "content": "Learn how to balance work and study by setting realistic goals, managing your time effectively, and taking care of your health.",
-    "author": "Sarah Brown",
-    "createdAt": "2024-05-30T12:00:00Z",
-    "imageUrl": "https://img.freepik.com/free-photo/smiling-young-blonde-female-teacher-wearing-glasses-sitting-desk-with-school-tools-classroom-pointing-finger-note-pad-looking-front-pointing-chalkboard-with-pen_141793-119942.jpg",
-    "category": "Work-Life Balance",
-    "tags": [
-      "balance",
-      "time management",
-      "health"
-    ]
+      "user_name": "Hank Thompson",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJLlp8wqIqSoIEqRdzJSDzQnNalg1BobdxbxA1dkT32zZj2w2ExMKgagPz27AOsZseiVs&usqp=CAU",
+      "country": "UK",
+      "rating": 4,
+      "comment": "Great features, but more UI customization options would be nice."
   },
   {
-    "title": "Effective Note-Taking",
-    "content": "Use methods like the Cornell Note-Taking System to organize your notes and make reviewing them easier.",
-    "author": "Emily Davis",
-    "createdAt": "2024-06-10T15:00:00Z",
-    "imageUrl": "https://www.vhv.rs/dpng/d/445-4450341_teacher-png-images-hd-transparent-png.png",
-    "category": "Study Techniques",
-    "tags": [
-      "note-taking",
-      "organization",
-      "review"
-    ]
+      "user_name": "Ivy Walker",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSATxpLg0h3ksdg1s-_uvrRCcdJQqQ9KcDf0tLHuzGNnMQGm9djpZcGDwbvRLEndJi4cq8&usqp=CAU",
+      "country": "Australia",
+      "rating": 5,
+      "comment": "User-friendly and efficient platform, makes submitting assignments easy."
   },
   {
-    "title": "Healthy Habits for Students",
-    "content": "Maintain a healthy diet, get enough sleep, and exercise regularly to stay physically and mentally fit during your studies.",
-    "author": "John Doe",
-    "createdAt": "2024-06-15T16:20:00Z",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1aKyx1f_29S9RbyhDX3ScpioebtdQAshzBavRxtseKGmaRkPl2ggtsrIESPFS4QG7Rf0&usqp=CAU",
-    "category": "Health & Wellness",
-    "tags": [
-      "health",
-      "wellness",
-      "fitness"
-    ]
+      "user_name": "Jack White",
+      "profile_pic": "https://ashisheditz.com/wp-content/uploads/2023/11/smart-cool-attitude-girl-dp-1.jpg",
+      "country": "Germany",
+      "rating": 4,
+      "comment": "Works well for submission and review. Adding a calendar view would help."
+  },
+  {
+      "user_name": "Kathy Green",
+      "profile_pic": "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "country": "USA",
+      "rating": 5,
+      "comment": "Simplicity and effectiveness make this tool excellent for managing assignments."
+  },
+  {
+      "user_name": "Leo Taylor",
+      "profile_pic": "https://images.playground.com/a0402e93474b401c8488f3ff90a7f88a.jpeg",
+      "country": "Canada",
+      "rating": 4,
+      "comment": "Great tool overall. An offline mode would make it even better."
   }
 ]

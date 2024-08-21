@@ -5,8 +5,6 @@ import { MdDelete } from "react-icons/md";
 import { FcViewDetails } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useEffect, useState } from 'react';
-import useAuth from '../../../components/hooks/useAuth';
 import { motion, useScroll } from "framer-motion"
 
 const AllAss = ({ assignment, handleDelete }) => {

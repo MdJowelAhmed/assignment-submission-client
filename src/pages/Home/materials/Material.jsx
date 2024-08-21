@@ -24,7 +24,7 @@ const Material = () => {
         <div className="container max-w-xl p-6  mx-auto  lg:px-8 lg:max-w-7xl">
             <div className=''>
                 <h1 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Study Materials</h1>
-                <p className="max-w-3xl mx-auto  text-xl text-center dark:text-gray-600 mb-10">Study Materials include guides, notes, past exam questions, video tutorials, research papers, and links to textbooks and e-books, along with practice sheets to aid learning and exam preparation.</p>
+                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">Study Materials include guides, notes, past exam questions, video tutorials, research papers, and links to textbooks and e-books, along with practice sheets to aid learning and exam preparation.</p>
             </div>
             <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {materials.map(material => (
@@ -39,7 +39,7 @@ const Material = () => {
                             className="w-full h-48 object-cover rounded-md mb-4"
                         />
                         <h2 className="text-xl font-semibold">{material.title}</h2>
-                        <p className="text-gray-700 mt-2">{material.description}</p>
+                        <p className="text-[#15143990] mt-2">{material.description}</p>
                         <div className='flex justify-between'>
                             <p className="text-gray-500 mt-2">Published: {new Date(material.createdAt).toLocaleDateString()}</p>
                             <p className="text-gray-500 mt-2 ">Category: {material.category}</p>

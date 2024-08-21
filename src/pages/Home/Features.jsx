@@ -15,7 +15,7 @@ const Features = () => {
                         data-aos-easing="linear"
                         data-aos-duration="1500">
                         <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900">Features</h2>
-                        <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-600">These smart features leverage technology to streamline workflows, enhance collaboration, and improve the overall learning experience for students and instructors alike.</p>
+                        <p className="max-w-3xl mx-auto mt-4 text-center text-[#15143990] dark:text-gray-600">These smart features leverage technology to streamline workflows, enhance collaboration, and improve the overall learning experience for students and instructors alike.</p>
                     </div>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center" data-aos="zoom-out-down"
                         data-aos-easing="linear"

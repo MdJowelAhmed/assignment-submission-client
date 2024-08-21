@@ -118,6 +118,10 @@ const Assignment = () => {
 
     return (
         <div>
+            <div>
+                <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">All Assignments</h2>
+                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>
+            </div>
             <div className="text-center mb-10 flex justify-around">
                 {/* Search Bar */}
                 <div className="">

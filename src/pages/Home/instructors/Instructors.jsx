@@ -9,10 +9,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination,Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 
-  
+
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
@@ -32,11 +32,14 @@ const Instructors = () => {
     }, [])
     console.log(instructors)
 
-    
+
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold text-center mb-8">Instructor's Corner</h1>
+        <div className="container mx-auto p-4 pl-5">
+            <div>
+                <h1  className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Instructors Corner</h1>
+                <p className="max-w-3xl mx-auto  text-center dark:text-gray-600 mb-20 text-[#15143990]">Instructors Corner is a section where instructors can share tips, guidance, and additional resources for students. It serves as a platform for instructors to provide valuable information that aids in exam preparation, project management, and enhancing the overall learning experience for students.</p>
+            </div>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={false}
@@ -63,26 +66,20 @@ const Instructors = () => {
                         slidesPerView: 3.5,
                     },
                 }}
-                className="w-4/5"
+                className="w-full "
             >
                 {instructors.map((instructor, index) => (
-                    <SwiperSlide key={index} className="w-full">
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 w-full">
+                    <SwiperSlide key={index} className="w-full ">
+                        <div className="bg-white rounded-lg shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mb-5 ml-5">
                             {/* Infinity animation */}
-                            <img src={instructor.imageUrl} alt={instructor.title} className="w-full h-48 object-cover animate-top-down" />
+                            <div className='px-10 pt-3'>
+                                <img src={instructor.imageUrl} alt={instructor.title} className="w-full h-48 object-cover animate-top-down rounded-full mb-5" />
+                                <p className='text-center'><strong>{instructor.author}</strong> </p>
+                            </div>
                             <div className="p-4">
                                 <h2 className="text-xl font-semibold mb-2">{instructor.title}</h2>
-                                <p className="text-gray-600 mb-4">{instructor.content}</p>
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {instructor.tags.map((tag, idx) => (
-                                        <span key={idx} className="bg-blue-200 text-blue-800 text-sm font-medium px-2 py-1 rounded-full">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <p><strong>Category:</strong> {instructor.category}</p>
-                                <p><strong>Author:</strong> {instructor.author}</p>
-                                <p><strong>Created At:</strong> {new Date(instructor.createdAt).toLocaleDateString()}</p>
+                                <p className="text-[#15143990] mb-4 text-sm">{instructor.content.slice(0, 110)}</p>
+                                <p><strong>Lecture:</strong> {instructor.category}</p>
                             </div>
                         </div>
                     </SwiperSlide>

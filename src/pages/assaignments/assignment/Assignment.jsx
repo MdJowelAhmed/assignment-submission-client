@@ -14,13 +14,20 @@ const Assignment = () => {
     const [filter, setFilter] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
     const [items, setItems] = useState([]);
+    const [order, setOrder] = useState('asc'); // Added state for order
     const { user } = useAuth();
 
-    // Fetch items with pagination
+    // Fetch items with pagination and order
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment?page=${currentPage}&size=${itemsPerPage}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/assignment`, {
+                    params: {
+                        page: currentPage,
+                        size: itemsPerPage,
+                        order: order // Include order parameter
+                    }
+                });
                 setItems(response.data);
             } catch (error) {
                 console.error('Error fetching items:', error);
@@ -28,7 +35,7 @@ const Assignment = () => {
         };
 
         fetchItems();
-    }, [currentPage, itemsPerPage]);
+    }, [currentPage, itemsPerPage, order]);
 
     // Fetch item count
     useEffect(() => {
@@ -77,6 +84,11 @@ const Assignment = () => {
         setSearchTerm(event.target.value);
     };
 
+    // Handle order change
+    const handleOrderChange = (event) => {
+        setOrder(event.target.value);
+    };
+
     // Filter and search items
     const filteredItems = items
         .filter(item => filter === 'All' || item.level === filter) // Filter by level
@@ -120,7 +132,7 @@ const Assignment = () => {
         <div>
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">All Assignments</h2>
-                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>
+                <p className="max-w-3xl mx-auto text-center  mb-10 text-[#15143990] dark:text-white">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>
             </div>
             <div className="text-center mb-10 flex justify-around">
                 {/* Search Bar */}
@@ -128,7 +140,7 @@ const Assignment = () => {
                     <input
                         type="text"
                         placeholder="Search assignments..."
-                        className="px-4 py-2 border rounded-md w-full bg-red-800 opacity-75  text-white "
+                        className="px-4 py-2 border rounded-md w-full   dark:text-white shadow-md shadow-black"
                         value={searchTerm}
                         onChange={handleSearchChange}
                     />
@@ -137,11 +149,22 @@ const Assignment = () => {
                 {/* Filter Dropdown */}
                 <div className="">
                     <label className="mr-5">Level:</label>
-                    <select value={filter} onChange={handleFilterChange} className="btn bg-red-800 opacity-75 text-white px-4 py-2 rounded-lg">
+                    <select value={filter} onChange={handleFilterChange} className=" dark:text-white px-4 py-2 rounded-lg  shadow-md shadow-black">
                         <option value="All">All</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
+                    </select>
+                </div>
+
+                {/* Order Dropdown */}
+                <div className="">
+                    <label className="mr-5">Order:</label>
+                    <select defaultValue={'desc'} value={order} onChange={handleOrderChange} className=" dark:text-white px-4 py-2 rounded-lg shadow-black shadow-md">
+                      
+                        <option value="asc"> Oldest First</option>
+                        <option value="desc"> Newest First</option>
+
                     </select>
                 </div>
             </div>

@@ -11,25 +11,38 @@ const AllAss = ({ assignment, handleDelete }) => {
 
     return (
         <div className="p-4">
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative flex flex-col p-4 space-y-4 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 transform transition-transform duration-200"
                 whileHover={{ y: -50, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
             >
-                <img src={thumbnail} alt="" className="w-full h-40 object-cover mb-4 rounded-t-lg dark:bg-gray-500" />
-                
+                <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                        src={thumbnail}
+                        alt=""
+                        className="w-full h-40 object-cover rounded-t-lg unique-image-style"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-40"></div>
+                </div>
+
                 <h2 className="text-xl font-medium font-poppins truncate">{title}</h2>
-                
+
                 <p className="text-gray-700 truncate">
-                    <span className='font-poppins text-blue-500 font-bold'>Description:</span> 
-                    <span className='font-poppins'>{description?.slice(0, 80)}...</span>
+                    <span className='font-poppins text-blue-500 font-bold'>Description:</span>
+                    <span className='font-poppins'>{description?.slice(0, 180)}...</span>
                 </p>
 
                 <div className='flex justify-between'>
-                    <p><span className='font-poppins text-blue-500 font-medium'>Marks:</span> <span className='font-poppins text-blue-500'>{marks}</span></p>
-                    <p><span className='font-poppins text-blue-500 font-medium'>Level:</span> <span className='font-poppins text-blue-500'>{level}</span></p>
+                    <p>
+                        <span className='font-poppins text-blue-500 font-medium'>Marks:</span>
+                        <span className='font-poppins text-blue-500'>{marks}</span>
+                    </p>
+                    <p>
+                        <span className='font-poppins text-blue-500 font-medium'>Level:</span>
+                        <span className='font-poppins text-blue-500'>{level}</span>
+                    </p>
                 </div>
 
                 <div className='flex space-x-2 mt-2'>
@@ -39,14 +52,14 @@ const AllAss = ({ assignment, handleDelete }) => {
                             <span className='ml-2'>Edit</span>
                         </button>
                     </Link>
-                    
-                    <button 
-                        onClick={() => handleDelete(_id, create.creatorEmail)} 
+
+                    <button
+                        onClick={() => handleDelete(_id, create.creatorEmail)}
                         className='bg-red-500 text-white p-2 rounded-md flex items-center transition-colors duration-300 hover:bg-red-600'>
                         <MdDelete className='text-xl' />
                         <span className='ml-2'>Delete</span>
                     </button>
-                    
+
                     <Link to={`/details/${_id}`}>
                         <button className='bg-gray-500 text-white p-2 rounded-md flex items-center transition-colors duration-300 hover:bg-gray-600'>
                             <FcViewDetails className='text-xl' />
@@ -54,7 +67,7 @@ const AllAss = ({ assignment, handleDelete }) => {
                         </button>
                     </Link>
                 </div>
-                
+
                 <div className="flex justify-between mt-4">
                     <button aria-label="Share this post" type="button" className="p-2 text-center transition-colors duration-300 hover:text-blue-600">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current dark:text-violet-600">

@@ -42,7 +42,7 @@ const Home = () => {
                 }
 
             </div>
-            <Link to="assignments"> <button className="btn bg-gradient-to-r from-cyan-500 to-blue-500 px-7 text-2xl text-white flex  mx-auto mb-12"> View All Assignments</button></Link>
+            <Link to="assignments"> <button className="btn btn-secondary px-7 text-2xl text-white flex  mx-auto mb-12"> View All Assignments</button></Link>
 
 
             <Instructors />

@@ -1,86 +1,27 @@
 [
-  {
-      "user_name": "Alice Johnson",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYtAbACQfItTNeQ0z8hNo_Wr2I6Wwy5-tYUg&s",
-      "country": "USA",
-      "rating": 5,
-      "comment": "Seamless and user-friendly platform for submitting assignments. Highly recommended!"
-  },
-  {
-      "user_name": "Bob Smith",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFnnjSFBLlcsDN724trHN3eB5eEzHfDU_C2A&s",
-      "country": "Canada",
-      "rating": 4,
-      "comment": "Easy to use, but adding a dark mode would improve the experience."
-  },
-  {
-      "user_name": "Charlie Brown",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2FoxQ9yfiiMcpZMlwK-YBOPGxLwDfhzQT16F-dnTbqG1utnAlYpd04h_c9A0OT8AfxO4&usqp=CAU",
-      "country": "UK",
-      "rating": 5,
-      "comment": "Excellent interface, very intuitive and clean. Great job overall!"
-  },
-  {
-      "user_name": "David Lee",
-      "profile_pic": "https://e1.pxfuel.com/desktop-wallpaper/383/679/desktop-wallpaper-most-beautiful-stylish-profile-facebook-for-cool-girls-stylish-girls-thumbnail.jpg",
-      "country": "Australia",
-      "rating": 4,
-      "comment": "Good project, but a notification feature would make it even better."
-  },
-  {
-      "user_name": "Eve Adams",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Nzt4U2xaN4DyOhcPiF1jT-N7k7sC43J6BA&s",
-      "country": "Germany",
-      "rating": 5,
-      "comment": "Very efficient tool for tracking submissions. Simple and effective!"
-  },
-  {
-      "user_name": "Frank Miller",
-      "profile_pic": "https://pbs.twimg.com/profile_images/674335491802705920/_AmewjKA_400x400.jpg",
-      "country": "USA",
-      "rating": 4,
-      "comment": "Good project, but it could be faster. Performance improvements needed."
-  },
-  {
-      "user_name": "Grace Wilson",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL13u-Davol3gBwYRTSImlRbGJS_VvtJg26w&s",
-      "country": "Canada",
-      "rating": 5,
-      "comment": "Straightforward submission process, very helpful for organizing assignments."
-  },
-  {
-      "user_name": "Hank Thompson",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJLlp8wqIqSoIEqRdzJSDzQnNalg1BobdxbxA1dkT32zZj2w2ExMKgagPz27AOsZseiVs&usqp=CAU",
-      "country": "UK",
-      "rating": 4,
-      "comment": "Great features, but more UI customization options would be nice."
-  },
-  {
-      "user_name": "Ivy Walker",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSATxpLg0h3ksdg1s-_uvrRCcdJQqQ9KcDf0tLHuzGNnMQGm9djpZcGDwbvRLEndJi4cq8&usqp=CAU",
-      "country": "Australia",
-      "rating": 5,
-      "comment": "User-friendly and efficient platform, makes submitting assignments easy."
-  },
-  {
-      "user_name": "Jack White",
-      "profile_pic": "https://ashisheditz.com/wp-content/uploads/2023/11/smart-cool-attitude-girl-dp-1.jpg",
-      "country": "Germany",
-      "rating": 4,
-      "comment": "Works well for submission and review. Adding a calendar view would help."
-  },
-  {
-      "user_name": "Kathy Green",
-      "profile_pic": "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      "country": "USA",
-      "rating": 5,
-      "comment": "Simplicity and effectiveness make this tool excellent for managing assignments."
-  },
-  {
-      "user_name": "Leo Taylor",
-      "profile_pic": "https://images.playground.com/a0402e93474b401c8488f3ff90a7f88a.jpeg",
-      "country": "Canada",
-      "rating": 4,
-      "comment": "Great tool overall. An offline mode would make it even better."
-  }
-]
+    {
+      "name": "Md Jowel Ahmed",
+      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTANoPi6XIyIEExjFKW4Gcem3COGfMPDde6DA&s",
+      "averageMark": "93%",
+      "subjects": ["React", "JavaScript", "Next.js"]
+    },
+    {
+      "name": "Fatima Begum",
+      "profilePic": "https://img.freepik.com/free-photo/close-up-beautiful-woman-smiling_23-2148369437.jpg",
+      "averageMark": "88%",
+      "subjects": ["PHP", "Next.js", "Java"]
+    },
+    {
+      "name": "Rahim Uddin",
+      "profilePic": "https://static.vecteezy.com/system/resources/previews/007/469/004/non_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg",
+      "averageMark": "90%",
+      "subjects": ["JavaScript", "React", "Python"]
+    },
+    {
+      "name": "Aisha Akter",
+      "profilePic": "https://img.freepik.com/free-photo/responsible-student_23-2147650755.jpg",
+      "averageMark": "92%",
+      "subjects": ["Java", "Next.js", "PHP"]
+    }
+  ]
+  

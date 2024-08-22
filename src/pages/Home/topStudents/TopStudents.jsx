@@ -35,7 +35,7 @@ const TopStudents = () => {
         <div>
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 my-5">Top Students</h2>
-                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">The Top Students section presents four high-achieving students, each with a profile picture, name, and average marks in core subjects such as React, JavaScript, Python, PHP, and Java. Engaging cards display their details with smooth animations.</p>
+                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 ">The Top Students section presents four high-achieving students, each with a profile picture, name, and average marks in core subjects such as React, JavaScript, Python, PHP, and Java. Engaging cards display their details with smooth animations.</p>
             </div>
             <div className="top-students grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
                 {students.map((student, index) => (

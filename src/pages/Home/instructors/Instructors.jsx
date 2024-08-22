@@ -38,7 +38,7 @@ const Instructors = () => {
         <div className="container mx-auto p-4 pl-5">
             <div>
                 <h1  className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Instructors Corner</h1>
-                <p className="max-w-3xl mx-auto  text-center dark:text-gray-600 mb-20 text-[#15143990]">Instructors Corner is a section where instructors can share tips, guidance, and additional resources for students. It serves as a platform for instructors to provide valuable information that aids in exam preparation, project management, and enhancing the overall learning experience for students.</p>
+                <p className="max-w-3xl mx-auto  text-center mb-20 dark:text-gray-900 text-[#15143990] ">Instructors Corner is a section where instructors can share tips, guidance, and additional resources for students. It serves as a platform for instructors to provide valuable information that aids in exam preparation, project management, and enhancing the overall learning experience for students.</p>
             </div>
             <Swiper
                 spaceBetween={30}

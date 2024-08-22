@@ -34,7 +34,7 @@ const Home = () => {
             </div>
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Top Assignments</h2>
-                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>
+                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 ">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-7 mb-12">
                 {

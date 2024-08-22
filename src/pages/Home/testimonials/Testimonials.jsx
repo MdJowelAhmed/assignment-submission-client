@@ -27,7 +27,7 @@ const Testimonials = () => {
         <div className="container mx-auto p-4">
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Users Reviews</h2>
-                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 text-[#15143990]">User reviews provide valuable insights into products or services, helping others make informed decisions. They reflect real experiences, highlight pros and cons, and build trust. Reviews also guide businesses in improving their offerings based on customer feedback.</p>
+                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 ">User reviews provide valuable insights into products or services, helping others make informed decisions. They reflect real experiences, highlight pros and cons, and build trust. Reviews also guide businesses in improving their offerings based on customer feedback.</p>
             </div>
             <Swiper
                 effect={'coverflow'}
@@ -70,7 +70,7 @@ const Testimonials = () => {
 
                                 />
                             </div>
-                            <p className="text-gray-700 text-center text-sm">{review.comment}</p>
+                            <p className=" text-center text-sm">{review.comment}</p>
                         </div>
                     </SwiperSlide>
                 ))}

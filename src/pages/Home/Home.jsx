@@ -9,6 +9,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Testimonials from "./testimonials/Testimonials";
 import TopStudents from "./topStudents/TopStudents";
+import Newsletter from "./subscribe/NewsLetter";
 
 
 const Home = () => {
@@ -52,6 +53,7 @@ const Home = () => {
 
             <Testimonials/>
             <TopStudents/>
+            <Newsletter/>
             <div className="">
                 <Features></Features>
             </div>

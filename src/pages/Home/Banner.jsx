@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 
 const Banner = () => {
     return (
-        <div>
+        <div >
             <Swiper
                 effect={'cube'}
                 grabCursor={true}

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const Newsletter = () => {
@@ -14,7 +15,7 @@ const Newsletter = () => {
         setMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/subscribe', {
+           const response = await axios.get(`${import.meta.env.VITE_API_URL}/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,8 +38,8 @@ const Newsletter = () => {
 
     return (
         <div className='min-h-screen dark:bg-gray-900 text-white p-5  shadow-2xl'>
-            <h2 className="text-3xl font-bold tracking-tight text-center  text-blue-500 mt-5">NewsLetter</h2>
-            <div className="flex flex-col md:flex-row items-center justify-center min-h-screen ">
+            <h2 className="text-3xl font-bold tracking-tight text-center  text-blue-500 mt-5 sm:text-5xl mb-10">NewsLetter</h2>
+            <div className="flex flex-col md:flex-row items-center justify-center  ">
 
                 <div className="md:w-1/2 px-5">
                     <img

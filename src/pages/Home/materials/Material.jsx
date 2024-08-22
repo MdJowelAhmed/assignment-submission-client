@@ -10,54 +10,52 @@ const Material = () => {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/study`)
                 setMaterials(response.data);
-
             } catch (error) {
                 console.error('Error fetching materials:', error);
             }
         };
 
         fetchMaterials();
-    }, [])
-   
+    }, []);
 
     return (
-        <div className="container max-w-xl p-6  mx-auto  lg:px-8 lg:max-w-7xl">
-            <div className=''>
-                <h1 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Study Materials</h1>
-                <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 ">Study Materials include guides, notes, past exam questions, video tutorials, research papers, and links to textbooks and e-books, along with practice sheets to aid learning and exam preparation.</p>
+        <div className="container max-w-xl p-6 mx-auto lg:px-8 lg:max-w-7xl">
+            <div className='text-center mb-10'>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-blue-500  mb-5">Study Materials</h1>
+                <p className="max-w-3xl mx-auto dark:text-gray-600">Study Materials include guides, notes, past exam questions, video tutorials, research papers, and links to textbooks and e-books, along with practice sheets to aid learning and exam preparation.</p>
             </div>
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {materials.map(material => (
-                    <motion.div    
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }} 
-                    key={material._id} 
-                    className="bg-white p-4 rounded-lg shadow-md">
-                        <img
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                {materials.slice(2,4).map(material => (
+                    <motion.div
+                        key={material._id}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-800"
+                    >
+                        <motion.img
                             src={material.image}
                             alt={material.title}
-                            className="w-full h-48 object-cover rounded-md mb-4"
+                            className="w-full h-64 object-cover"
+                            whileHover={{ scale: 1.1 }}
                         />
-                        <h2 className="text-xl font-semibold">{material.title}</h2>
-                        <p className="text-[#15143990] mt-2">{material.description}</p>
-                        <div className='flex justify-between'>
-                            <p className="text-gray-500 mt-2">Published: {new Date(material.createdAt).toLocaleDateString()}</p>
-                            <p className="text-gray-500 mt-2 ">Category: {material.category}</p>
-                        </div>
-
-                        <p className="text-blue-500 mt-2">Tags: {material.tags.join(', ')}</p>
-
-
-                        <div className='flex justify-between items-center'>
-                            <p className="text-gray-500 mt-2">Author: {material.author}</p>
-                            <a
-                                href={material.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className=" btn btn-secondary text-white mt-4 "
-                            >
-                                Learn More
-                            </a>
+                        <div className="p-6">
+                            <h2 className="text-2xl font-bold mb-2 dark:text-white">{material.title}</h2>
+                            <p className="text-gray-700 dark:text-gray-300">{material.description}</p>
+                            <div className='flex justify-between items-center mt-4'>
+                                <p className="text-gray-500">Published: {new Date(material.createdAt).toLocaleDateString()}</p>
+                                <p className="text-gray-500">Category: {material.category}</p>
+                            </div>
+                            <p className="text-blue-500 mt-2">Tags: {material.tags.join(', ')}</p>
+                            <div className='flex justify-between items-center mt-4'>
+                                <p className="text-gray-500">Author: {material.author}</p>
+                                <a
+                                    href={material.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-secondary text-white"
+                                >
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 ))}

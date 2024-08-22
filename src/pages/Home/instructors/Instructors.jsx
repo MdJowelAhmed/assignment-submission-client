@@ -37,8 +37,8 @@ const Instructors = () => {
     return (
         <div className="container mx-auto p-4 pl-5">
             <div>
-                <h1  className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Instructors Corner</h1>
-                <p className="max-w-3xl mx-auto  text-center mb-20 dark:text-gray-900 text-[#15143990] ">Instructors Corner is a section where instructors can share tips, guidance, and additional resources for students. It serves as a platform for instructors to provide valuable information that aids in exam preparation, project management, and enhancing the overall learning experience for students.</p>
+                <h1  className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-blue-500 mb-5">Instructors Corner</h1>
+                <p className="max-w-3xl mx-auto  text-center mb-20 dark:text-gray-900 ">Instructors Corner is a section where instructors can share tips, guidance, and additional resources for students. It serves as a platform for instructors to provide valuable information that aids in exam preparation, project management, and enhancing the overall learning experience for students.</p>
             </div>
             <Swiper
                 spaceBetween={30}
@@ -70,7 +70,7 @@ const Instructors = () => {
             >
                 {instructors.map((instructor, index) => (
                     <SwiperSlide key={index} className="w-full ">
-                        <div className="bg-white rounded-lg shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mb-5 ml-5">
+                        <div className="bg-white rounded-lg shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mb-5 ml-5 dark:bg-gray-900">
                             {/* Infinity animation */}
                             <div className='px-10 pt-3'>
                                 <img src={instructor.imageUrl} alt={instructor.title} className="w-full h-48 object-cover animate-top-down rounded-full mb-5" />

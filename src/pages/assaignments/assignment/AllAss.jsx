@@ -12,26 +12,29 @@ const AllAss = ({ assignment, handleDelete }) => {
     return (
         <div className="p-4">
             <motion.div
-                initial={{ opacity: 0, y: 0 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative flex flex-col p-4 space-y-4 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 transform transition-transform duration-200"
-                whileHover={{ y: -50, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
+                  initial={{ opacity: 0, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative flex flex-col p-4 space-y-4 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 transform transition-transform duration-200"
+                  whileHover={{ y: -50, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
+                  style={{ maxWidth: '100%' }}
             >
                 <div className="relative overflow-hidden rounded-t-lg">
                     <img
                         src={thumbnail}
-                        alt=""
+                        alt={title}
                         className="w-full h-40 object-cover rounded-t-lg unique-image-style"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-40"></div>
                 </div>
 
-                <h2 className="text-xl font-medium font-poppins truncate">{title}</h2>
+                <h2 className="text-xl font-medium" style={{ maxWidth: '100%' }}>
+                    {title.slice(0,50)}...
+                </h2>
 
-                <p className="text-gray-700 truncate">
+                <p className="text-gray-700 ">
                     <span className='font-poppins text-blue-500 font-bold'>Description:</span>
-                    <span className='font-poppins'>{description?.slice(0, 180)}...</span>
+                    <span className='font-poppins'>{description?.length > 150 ? `${description.slice(0, 150)}...` : description}</span>...
                 </p>
 
                 <div className='flex justify-between'>

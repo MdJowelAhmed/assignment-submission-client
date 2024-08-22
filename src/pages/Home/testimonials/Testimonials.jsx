@@ -21,12 +21,9 @@ const Testimonials = () => {
     }, [])
 
     return (
-
-
-
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 mb-10">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">Users Reviews</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-blue-500 mb-5">Users Reviews</h2>
                 <p className="max-w-3xl mx-auto text-center dark:text-gray-600 mb-10 ">User reviews provide valuable insights into products or services, helping others make informed decisions. They reflect real experiences, highlight pros and cons, and build trust. Reviews also guide businesses in improving their offerings based on customer feedback.</p>
             </div>
             <Swiper

@@ -15,21 +15,13 @@ const Newsletter = () => {
         setMessage('');
 
         try {
-           const response = await axios.get(`${import.meta.env.VITE_API_URL}/subscribe`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/subscribe`, formData);
 
-            const data = await response.json();
-
-            if (response.ok) {
+            if (response.status === 201) {
                 setMessage('Subscribed successfully!');
                 setFormData({ name: '', email: '', message: '' });
             } else {
-                setMessage(data.message);
+                setMessage(response.data.message);
             }
         } catch (error) {
             setMessage('An error occurred. Please try again later.');
@@ -37,10 +29,9 @@ const Newsletter = () => {
     };
 
     return (
-        <div className='min-h-screen dark:bg-gray-900 text-white p-5  shadow-2xl'>
-            <h2 className="text-3xl font-bold tracking-tight text-center  text-blue-500 mt-5 sm:text-5xl mb-10">NewsLetter</h2>
-            <div className="flex flex-col md:flex-row items-center justify-center  ">
-
+        <div className='min-h-screen dark:bg-gray-900 text-white p-5 shadow-2xl'>
+            <h2 className="text-3xl font-bold tracking-tight text-center text-blue-500 mt-5 sm:text-5xl mb-10">NewsLetter</h2>
+            <div className="flex flex-col md:flex-row items-center justify-center">
                 <div className="md:w-1/2 px-5">
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgc6-U0gTFzucpD3UyK4dtdAwSK4tmgcRr9j9CK7TGMslesPBZwnjf2-_qUhdJGN4sPQ&usqp=CAU"
@@ -57,7 +48,7 @@ const Newsletter = () => {
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder="Enter your name"
-                            className="p-3 shadow-lg  border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="p-3 shadow-lg border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required
                         />
                         <input
@@ -66,7 +57,7 @@ const Newsletter = () => {
                             value={formData.email}
                             onChange={handleInputChange}
                             placeholder="Enter your email"
-                            className="p-3 shadow-lg border-2  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="p-3 shadow-lg border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required
                         />
                         <textarea

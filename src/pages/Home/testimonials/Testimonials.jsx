@@ -61,7 +61,7 @@ console.log(reviews)
                             <p className="text-center text-gray-500">{review.country}</p>
                             <div className="flex justify-center my-2">
                                 <Rating
-                                    value={review.rating} // Dynamically set rating
+                                    value={review.rating} 
                                     readonly
                                     style={{ maxWidth: 180 }}
 

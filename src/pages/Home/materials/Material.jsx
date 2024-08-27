@@ -29,7 +29,7 @@ const Material = () => {
                     <motion.div
                         key={material._id}
                         whileHover={{ scale: 1.05 }}
-                        className="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-800"
+                        className=" rounded-lg overflow-hidden shadow-lg dark:bg-gray-800"
                     >
                         <motion.img
                             src={material.image}
@@ -39,7 +39,7 @@ const Material = () => {
                         />
                         <div className="p-6">
                             <h2 className="text-2xl font-bold mb-2 dark:text-white">{material.title}</h2>
-                            <p className="text-gray-700 dark:text-gray-300">{material.description}</p>
+                            <p className="dark:text-white">{material.description}</p>
                             <div className='flex justify-between items-center mt-4'>
                                 <p className="text-gray-500">Published: {new Date(material.createdAt).toLocaleDateString()}</p>
                                 <p className="text-gray-500">Category: {material.category}</p>

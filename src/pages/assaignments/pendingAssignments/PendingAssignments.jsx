@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useAuth from "../../../components/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const PendingAssignments = () => {
@@ -25,6 +26,9 @@ const PendingAssignments = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Assignment | Pending </title>
+            </Helmet>
             <div>
                 {
                     item.map(p => <div key={p._id}>

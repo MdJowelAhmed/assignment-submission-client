@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Testimonials from "./testimonials/Testimonials";
 import TopStudents from "./topStudents/TopStudents";
 import Newsletter from "./subscribe/NewsLetter";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -30,6 +31,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Assignment | Home </title>
+            </Helmet>
             <div className="mb-16">
                 <Banner></Banner>
             </div>
@@ -48,10 +52,10 @@ const Home = () => {
 
             <Instructors />
             <Material />
-            <Testimonials/>
-            <TopStudents/>
-            <Newsletter/>
-           <Features></Features>
+            <Testimonials />
+            <TopStudents />
+            <Newsletter />
+            <Features></Features>
             <Faq></Faq>
         </div>
     );

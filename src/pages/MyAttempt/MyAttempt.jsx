@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../components/hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 // import { set } from "firebase/database";
 
 
@@ -30,6 +31,9 @@ const MyAttempt = () => {
     console.log(item)
     return (
         <div>
+            <Helmet>
+                <title>Assignment | MyAttempt </title>
+            </Helmet>
            {
             item.map(p=> <div key={p._id}>
                 

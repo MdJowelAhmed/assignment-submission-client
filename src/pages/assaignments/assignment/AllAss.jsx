@@ -15,7 +15,7 @@ const AllAss = ({ assignment, handleDelete }) => {
                   initial={{ opacity: 0, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="relative flex flex-col p-4 space-y-4 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 transform transition-transform duration-200"
+                  className="relative flex flex-col p-4 space-y-4 overflow-hidden rounded-lg shadow-lg dark:bg-white  transform transition-transform duration-200"
                   whileHover={{ y: -50, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
                   style={{ maxWidth: '100%' }}
             >
@@ -32,9 +32,9 @@ const AllAss = ({ assignment, handleDelete }) => {
                     {title.slice(0,50)}...
                 </h2>
 
-                <p className="text-gray-700 ">
+                <p className=" ">
                     <span className='font-poppins text-blue-500 font-bold'>Description:</span>
-                    <span className='font-poppins'>{description?.length > 150 ? `${description.slice(0, 150)}...` : description}</span>...
+                    <span className='font-poppins dark:text-blue-500'>{description?.length > 150 ? `${description.slice(0, 150)}...` : description}</span>...
                 </p>
 
                 <div className='flex justify-between'>

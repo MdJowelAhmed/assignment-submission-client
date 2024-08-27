@@ -6,6 +6,7 @@ import useAuth from "../../../components/hooks/useAuth";
 // import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const CreateAssignments = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -118,7 +119,9 @@ const CreateAssignments = () => {
     return (
         <div className="lg:h-[610px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/abstract-flow-background_1048-8740.jpg?t=st=1715449493~exp=1715453093~hmac=b3b9e254bceeec502cecd770559486a9c2e752872dbe1a28de6d149c471dd0f0&w=740)' }}>
             {/*  */}
-
+            <Helmet>
+                <title>Assignment | Create </title>
+            </Helmet>
             <div className="flex flex-col-reverse md:flex-row gap-5 md:gap-10 md:p-12 ">
                 <form onSubmit={handleAddAssignments} className="md:w-2/3">
                     {/* title and description */}

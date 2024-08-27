@@ -41,7 +41,7 @@ const TopStudents = () => {
                 {students.map((student, index) => (
                     <motion.div
                         key={index}
-                        className="student-card bg-white p-6 shadow-lg rounded-lg overflow-hidden parallax"
+                        className="student-card dark:bg-gray-900 p-6 shadow-lg dark:shadow-2xl rounded-lg overflow-hidden parallax"
                         whileHover={{
                             scale: [1, 1, 1, 1, 1],
                             rotate: [0, 0, 100, 100, 0],

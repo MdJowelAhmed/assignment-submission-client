@@ -70,7 +70,7 @@ const Instructors = () => {
             >
                 {instructors.map((instructor, index) => (
                     <SwiperSlide key={index} className="w-full ">
-                        <div className="bg-white rounded-lg shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mb-5 ml-5 dark:bg-gray-900">
+                        <div className=" rounded-lg shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mb-5 ml-5 dark:bg-gray-900">
                             {/* Infinity animation */}
                             <div className='px-10 pt-3'>
                                 <img src={instructor.imageUrl} alt={instructor.title} className="w-full h-48 object-cover animate-top-down rounded-full mb-5" />
@@ -78,7 +78,7 @@ const Instructors = () => {
                             </div>
                             <div className="p-4">
                                 <h2 className="text-xl font-semibold mb-2">{instructor.title}</h2>
-                                <p className="text-[#15143990] mb-4 text-sm">{instructor.content.slice(0, 110)}</p>
+                                <p className=" mb-4 text-sm">{instructor.content.slice(0, 110)}</p>
                                 <p><strong>Lecture:</strong> {instructor.category}</p>
                             </div>
                         </div>

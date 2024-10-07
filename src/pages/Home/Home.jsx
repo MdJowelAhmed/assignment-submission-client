@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Assignment | Home </title>
+                <title>EduHaven | Home </title>
             </Helmet>
             <div className="mb-16">
                 <Banner></Banner>

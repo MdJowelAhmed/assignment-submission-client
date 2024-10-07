@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import AllAss from "./AllAss"; // Ensure this component is properly imported
+import { Helmet } from "react-helmet-async";
 
 const Assignment = () => {
     // State variables
@@ -130,6 +131,9 @@ const Assignment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>EduHaven | AllAssignments </title>
+            </Helmet>
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900 mb-5">All Assignments</h2>
                 <p className="max-w-3xl mx-auto text-center  mb-10 text-[#15143990] dark:text-white">Programming assignments sharpen problem-solving skills and reinforce coding knowledge. <br /> They provide hands-on experience, improve debugging, and prepare students <br />  for real-world challenges in the tech industry.</p>

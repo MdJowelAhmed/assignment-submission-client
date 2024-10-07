@@ -21,7 +21,7 @@ const Blog = () => {
     return (
         <div className="container max-w-xl p-6 mx-auto lg:px-8 lg:max-w-7xl">
             <Helmet>
-                <title>Assignment | Blogs </title>
+                <title>EduHaven | Blogs </title>
             </Helmet>
         <div className='text-center mb-10'>
             <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-blue-500  mb-5">Study Materials</h1>

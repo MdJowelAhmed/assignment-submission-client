@@ -32,7 +32,7 @@ const MyAttempt = () => {
     return (
         <div>
             <Helmet>
-                <title>Assignment | MyAttempt </title>
+                <title>EduHaven | MyAttempt </title>
             </Helmet>
            {
             item.map(p=> <div key={p._id}>

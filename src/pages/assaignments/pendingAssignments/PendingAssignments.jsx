@@ -27,7 +27,7 @@ const PendingAssignments = () => {
     return (
         <div>
             <Helmet>
-                <title>Assignment | Pending </title>
+                <title>EduHaven | Pending </title>
             </Helmet>
             <div>
                 {

@@ -4,6 +4,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const UpdateAssignment = () => {
     const assignment = useLoaderData()
@@ -63,6 +64,9 @@ const UpdateAssignment = () => {
     return (
         <div>
             <div className="h-[500px] rounded-3xl" style={{ backgroundImage: 'url(https://img.freepik.com/premium-vector/abstract-blue-light-curve-wave-luxury-design-creative-background-vector_33869-2846.jpg?w=900)' }}>
+            <Helmet>
+                <title>EduHaven | Update </title>
+            </Helmet>
                 {/*  */}
                 <h2 className="text-center text-4xl font-poppins font-semibold pt-5 text-green-900">Update a new assignments</h2>
                 <div className="flex flex-col md:flex-row gap-5 md:gap-10 p-12">

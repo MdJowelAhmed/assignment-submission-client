@@ -1,13 +1,14 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../../components/hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const Submission = () => {
     const loadedDetails = useLoaderData()
     const { user } = useAuth()
     const { id } = useParams()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const details = loadedDetails.find(item => item._id == id)
     const { _id, title, description, marks, thumbnail, level, date, create } = details;
 
@@ -44,13 +45,18 @@ const Submission = () => {
                         text: "You clicked the button!",
                         icon: "success"
                     });
-                      form.reset()
-                      navigate('/pending')
+                    form.reset()
+                    navigate('/pending')
                 }
             })
     }
     return (
         <div className="flex gap-5" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg)' }}>
+
+            <Helmet>
+                <title>EduHaven | Submission </title>
+            </Helmet> 
+
             {/*  */}
             <div className=" text-center flex-1">
                 <div><img className="h-60 w-2/3 m-4 mx-auto mt-10" src={thumbnail} alt="" /></div>
